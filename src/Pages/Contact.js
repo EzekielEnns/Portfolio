@@ -28,6 +28,11 @@ function Contact(){
 & li:nth-child(2)::marker{color: #EAB6FE;}
 & li:nth-child(3)::marker{color: #B2F0E1;}
 & li:nth-child(4)::marker{color: #77E3FE;}
+
+@media only screen and (max-width: 600px) {
+   &{font-size:1.2em;}
+}
+
 `;
     return(<Call>
 	       <ul>

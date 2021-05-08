@@ -9,6 +9,7 @@ Props
 import React, {useState} from 'react';
 import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
+import Images from './Images.js'
 
 function Info({align, children, img}){
 
@@ -23,6 +24,7 @@ function Info({align, children, img}){
 
 &>div{
     max-width:50%;
+   
 }
 
 & img{
@@ -31,15 +33,20 @@ function Info({align, children, img}){
     border:3px solid black;
     align-self:center;
 }
-`;
+
+@media only screen and (max-width:600px){
+   /* &{flex-direction:column;text-align:center;}*/
     
+}
+
+`;
     return(<Information>
 	       <div>
 		   <ReactMarkdown>
 		       {children}
 		   </ReactMarkdown>
 	       </div>
-	       <img src={img}/>
+	       <Images index={0}>{[img]}</Images>
 	   </Information>)
 }
 

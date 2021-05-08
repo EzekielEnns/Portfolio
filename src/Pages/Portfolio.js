@@ -19,7 +19,6 @@ function importAll(r){
 importAll(require.context('../Pictures/', false, /\.(png|jpe?g|svg)$/));
 
 function Portfolio(){
-    console.log(cache)
     return(<div>
 	       <Project name={'AspNet'} imgs={cache['AspNet']}>
 		   {
@@ -50,5 +49,4 @@ it covered the basics of web development
 	       </Project>
 	   </div>);
 }
-// {images.map((img,i)=><li key={i}><img src={img.default}/></li>)}
 export default Portfolio

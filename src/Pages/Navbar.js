@@ -1,4 +1,4 @@
-import React,{useRef} from 'react';
+import React,{useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -29,26 +29,43 @@ function Navbar(props){
     z-index:5;
 }
 
-& a:after, & a:before,& a.active:before, & a.active:after{
+& a:after, & a:before{
     content:"";
     display:block;
     width:0%;
     height:5px;
-    transition: width 2s;
+    transition: width 0.5s;
     z-index:10;
 }
 
-& a:after, & a.active:after{
+& a:after{
     margin-top:5%;
-    margin-left: auto;   /*TODO use short hand*/
+    margin-left: auto; 
     margin-right:20%;
 }
-& a:before, & a.active:before{
+& a:before{
     margin-bottom:5%;
     margin-left:20%;
 }
 
-& a:hover:before,& a:hover:after,& a.active:before,& a.active:after{
+& a:hover:before,& a:hover:after{
+    width:60%;
+    transition: width 0.5s;
+}
+
+& a:active:before,& a:active:after{
+    width:60%;
+    transition: width 0.5s;
+}
+
+@keyframes current{
+   100% {width:60%;}
+}
+@keyframes current2{
+   100% {width:60%;}
+}
+
+& a.active:before, & a.active:after{
     width:60%;
 }
 
@@ -61,12 +78,14 @@ function Navbar(props){
 
 `;
     
-    const loc = useLocation().pathname;
-    
+    const [page,setPage] = useState('/');
+    const test = (e) =>{
+	setPage(e.target.name);
+    }
     return(<Nav>
-	       <Link className={(loc=='/Contact'?'active':null)+' navContact'} to="/Contact">Contact</Link>
-	       <Link className={(loc=='/'?'active':null)+' navPortfolio'} to="/">Portfolio</Link>
-               <Link className={(loc=='/About'?'active':null)+' navAbout'} to="/About">About</Link>
+	       <Link onClick={test} name='/Contact' className={(page=='/Contact'?'active':'')+' navContact'} to="/Contact">Contact</Link>
+	       <Link onClick={test} name='/'className={(page=='/'?'active':'')+' navPortfolio'} to="/">Portfolio</Link>
+               <Link onClick={test} name='/About' className={(page=='/About'?'active':'')+' navAbout'} to="/About">About</Link>
 	   </Nav>)
 }
 

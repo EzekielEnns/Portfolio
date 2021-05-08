@@ -13,4 +13,14 @@ a {
   color: ${({theme})=>theme.text}; ;
 }
 
+.fade{
+  animation-name:test;
+  animation-duration:0.5s;
+}
+
+@keyframes test{
+  from {opacity:0;}
+  to {opacity:1;}
+}
 `
+

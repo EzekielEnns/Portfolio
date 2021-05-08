@@ -7,10 +7,10 @@ Props
 */
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import Images from './Images.js';
 
-function Album(props){
-
-    const Alb = styled.div.attrs(()=>({tabIndex:0}))`
+function Album({imgs}){
+    const Alb = styled.div`
 &{
     width:max-content;
     margin-right:10px;
@@ -32,7 +32,10 @@ function Album(props){
 
 
 & button{
+    padding:0;
     z-index:100;
+    width:50px;
+    height:50px;
     position:absolute;
     opacity:0;
     background-color:black;
@@ -44,31 +47,52 @@ function Album(props){
 & button:hover{
     opacity:0.5;
     
-}`;
+}
+
+@media only screen and (max-width:600px){
+
+&{
+   margin:0 auto;
+   width:100%;
+   height:100%;
+}
+
+&>img{
+    width:50%;
+    height:100%;
+    z-index:0;
+    box-shadow:-10px 10px black;
+}
+
+}
+
+`;
 
     const PrvBtn = styled.button`align-self:start;`;
     const NxtBtn = styled.button`align-self:end;`;
     
     const [index,setIndex]= useState(0);
-
     const handlePrvBtn = (e)=> {
 	e.preventDefault();
 	if(index-1 > 0)
 	    setIndex(index-1)
 	else
-	    setIndex(props.imgs.length-1)
+	    setIndex(imgs.length-1)
     }
     const handleNxtBtn = (e)=> {
 	e.preventDefault();
-	if(index+1 < props.imgs.length)
+	if(index+1 < imgs.length)
 	    setIndex(index+1)
 	else
 	    setIndex(0)
 	console.log(index)
     }
+
     
     return(<Alb>
-	       <img src={props.imgs[index]}/>
+	       <Images index={index}>
+		   {imgs}
+	       </Images>
 	       <PrvBtn  onClick={handlePrvBtn}>&larr;</PrvBtn>
 	       <NxtBtn onClick={handleNxtBtn}>&rarr;</NxtBtn>
 	   </Alb>)

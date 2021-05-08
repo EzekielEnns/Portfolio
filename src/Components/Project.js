@@ -26,6 +26,12 @@ function Project(props){
     padding-left:10%;
 }
 
+
+@media only screen and (max-width:600px){
+       & {flex-direction:column-reverse;}
+       .Summary{margin-bottom:10%}
+}
+
 `;
     
     return(<Proj>
