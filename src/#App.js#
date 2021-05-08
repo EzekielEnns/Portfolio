@@ -3,7 +3,7 @@ TODO: react mobile support: https://jsramblings.com/how-to-use-media-queries-wit
 TODO: react transtions: https://reactjs.org/docs/animation.html
 TODO: stick toggle button: #fixedbutton {position: fixed; top: 0px; right: 0px;}
 TODO: to the top button: https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
-TODO: Add Content.....
+TODO: Add Content.....r
 */
 import React, {useState, useEffect} from 'react';
 
