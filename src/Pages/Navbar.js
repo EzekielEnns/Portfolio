@@ -78,13 +78,13 @@ function Navbar(props){
 
 `;
     
-    const [page,setPage] = useState('/');
+    const [page,setPage] = useState('/Portfolio');
     const test = (e) =>{
 	setPage(e.target.name);
     }
     return(<Nav>
 	       <Link onClick={test} name='/Contact' className={(page=='/Contact'?'active':'')+' navContact'} to="/Contact">Contact</Link>
-	       <Link onClick={test} name='/'className={(page=='/'?'active':'')+' navPortfolio'} to="/">Portfolio</Link>
+	       <Link onClick={test} name='/Portfolio'className={(page=='/Portfolio'?'active':'')+' navPortfolio'} to="/Portfolio">Portfolio</Link>
                <Link onClick={test} name='/About' className={(page=='/About'?'active':'')+' navAbout'} to="/About">About</Link>
 	   </Nav>)
 }

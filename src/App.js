@@ -8,7 +8,7 @@ TODO: Add Content.....
 import React, {useState, useEffect} from 'react';
 
 //navigation
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 
 //pages
 import Portfolio from './Pages/Portfolio.js'
@@ -39,11 +39,12 @@ function App() {
 	       <Header theme={theme}/>
 	       <Router>
 		   <Navbar/>
-	               <Switch>
-	                   <Route exact path="/" component={Portfolio}/>
-	                   <Route exact path="/About" component={About}/>
-	                   <Route exact path="/Contact" component={Contact}/>
-	               </Switch>
+	           <Switch>
+		       <Route exact path='/' render={()=>{return (<Redirect to="/Portfolio"/>)}}/>
+	               <Route exact path="/Portfolio" component={Portfolio}/>
+	               <Route exact path="/About" component={About}/>
+	               <Route exact path="/Contact" component={Contact}/>
+	           </Switch>
 	        </Router>
 	   </ThemeProvider>);
 }

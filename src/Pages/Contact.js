@@ -37,7 +37,8 @@ function Contact(){
     return(<Call>
 	       <ul>
 		   <li><span> 1-403-598-7077</span> </li>
-		   <li><span><a href="">Linkden</a></span></li>
+		   <li><span><a href="www.linkedin.com/in/ezekiel-enns-8572281a0
+">Linkden</a></span></li>
 		   <li><span><a href="https://github.com/EzekielEnns">Github</a></span></li>
 		   <li><span>ezekiel.enns@protonmail.com</span></li>
 	       </ul>
