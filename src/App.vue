@@ -105,7 +105,7 @@
         </template>
 
         <template v-slot:programs>
-          <Project title="DFA simulation" link="github.com">
+          <Project title="DFA simulation" link="https://github.com/EzekielEnns/DFA_Rust">
             <p>
               This was my very first attempt at the language. The project
               itself was done as a way of understanding DFA's and how they work
@@ -129,7 +129,7 @@
           </CatHeader>
         </template>
         <template v-slot:programs>
-          <Project title="Portfolio" link="github.com">
+          <Project title="Portfolio" link="https://github.com/EzekielEnns/Portfolio">
             <p>
               This project actually started from a desire to learn
               react, it was fun and well worth it. but I found a lot of
@@ -228,7 +228,7 @@ export default {
           url= 'https://www.linkedin.com/in/ezekiel-enns/'
           break;
         case 'resume':
-          url='none'
+          url='https://github.com/EzekielEnns/Portfolio/blob/main/myResume.pdf'
           break;
         default:
           break;
