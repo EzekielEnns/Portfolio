@@ -1,4 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
-createApp(App).mount('#app')
+import VueMobileDetection from 'vue-mobile-detection'
+const app = createApp(App)
+app.use(VueMobileDetection,{});
+app.mount('#app')
