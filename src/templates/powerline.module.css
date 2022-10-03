@@ -24,10 +24,18 @@ Website: https://github.com/vivekascoder/powerline.css
     cursor: pointer;
     clip-path: polygon(0% 0%, calc(100% - 14px) 0%, 100% 50%, calc(100% - 14px) 100%, 100% 100%, 0% 100%, 14px 50%);
 }
+.current {
+    outline: white 1px solid;
+}
+
+.notCurrent {
+    background-color:grey; 
+
+}
 
 .side{
     color: white;
-    margin-left:10px;
+    margin-left:auto;
 }
 
 .front{

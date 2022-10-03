@@ -2,44 +2,39 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import * as style from "./template.module.css"
 import * as powerline from "./powerline.module.css"
+import {Location} from "@reach/router";
+import {Redirect} from "@reach/router"
 
-export default function Template({ data: {mdx}, children}) {
 
+export default function Template({type, children}) {
   return (
   <>
-    <div className={style.contentWrapper}>
+    <div>
       <div className={style.content}>
-        <div className={style.mdx}>{children}</div>
+        <div className={style.mdx}> {children} </div>
       </div>
+      {/*TODO do inifnite scroll here*/}
+      <div className={style.content}>
+        <div className={style.mdx}> {children} </div>
+      </div>
+      {/*End Example*/}
     </div>
     <div className={[style.nav, powerline.powerline, powerline.draculaBackground].join(' ')}>
         <span className={[powerline.front, powerline.draculaCyan].join(' ')}>
            <Link to="/about">About</Link> 
         </span> 
-        <span className={[powerline.powerlineComponent, powerline.draculaOrange].join(' ')}>
+        <span className={[powerline.powerlineComponent, powerline.draculaOrange,powerline.notCurrent].join(' ')}>
            <Link to="/project">Projects</Link> 
         </span> 
-        <span className={[powerline.powerlineComponent, powerline.draculaPurple].join(' ')}>
+        <span className={[powerline.powerlineComponent, powerline.draculaPurple, powerline.notCurrent].join(' ')}>
            <Link to="/Contact">Contact</Link> 
         </span> 
         <span className={[powerline.powerlineComponent,powerline.side ].join(' ')}>
-           <text>{mdx.frontmatter.type}</text>
+           {'-- '+type+' --'}
         </span> 
     </div>
  </>)
 }
-export const pageQuery = graphql`
-  query($type: String!) {
-    mdx(frontmatter: { type: { eq: $type } }) {
-      frontmatter {
-        title,
-        type
-      }
-    }
-  }
-`
-//TODO export to general template for all pages
-//TODO implement this https://stackoverflow.com/questions/55512817/is-it-possible-to-change-route-on-scroll
-//TODO implement projects with url paramiters 
+
 //TODO install components needed for mdx (code displayer) 
 //TODO make components for mdx (center text option)

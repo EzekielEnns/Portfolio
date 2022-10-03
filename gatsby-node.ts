@@ -1,5 +1,5 @@
 import * as path from "path"
-const template = path.resolve(`src/templates/template.tsx`)
+const mdxtemplate = path.resolve(`src/templates/mdxtemplate.tsx`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -35,7 +35,7 @@ exports.createPages = async ({ actions, graphql }) => {
     console.log(path)
     createPage({
       path: path,
-      component:`${template}?__contentFilePath=${node.internal.contentFilePath}` ,
+      component:`${mdxtemplate}?__contentFilePath=${node.internal.contentFilePath}` ,
       context: {
         type: node.frontmatter.type, // "Using a Theme"
         id: node.id
