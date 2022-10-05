@@ -37,4 +37,5 @@ export default function Template({type, children}) {
 }
 
 //TODO install components needed for mdx (code displayer) 
+//https://www.chartjs.org/docs/latest/samples/other-charts/radar-skip-points.html
 //TODO make components for mdx (center text option)
