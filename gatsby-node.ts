@@ -1,45 +1,59 @@
 import * as path from "path"
-const mdxtemplate = path.resolve(`src/templates/mdxtemplate.tsx`)
+const Template = path.resolve(`src/templates/template.tsx`)
+const Projhome = path.resolve(`src/templates/projhome.tsx`)
 
 exports.createPages = async ({ actions, graphql }) => {
+
+    //TODO fix query
   const { createPage } = actions
-  const result = await graphql(`
+  const mdxPrm = graphql(`
     {
       allMdx {
           nodes {
             id,
             frontmatter {
-              title
-              type
+                purpose 
             },
             internal {
               contentFilePath
             }
           }
       },
-      allSitePage {
-        nodes {
-          path,
-        }
-      }
     }
-  `)
-  if (result.errors) {
-    console.error(result.errors)
-  }
-  result.data.allMdx.nodes.forEach(node => {
-    let isIndex = node.frontmatter.type == "index" || node.frontmatter.title == 'index';
-    let isProject = node.frontmatter.type == "project";
-    let isAbout = node.frontmatter.type == "about";
-    let path = `/${isProject?'projects':''}${isAbout?'about':''}${!isIndex?`/${node.frontmatter.title}`:'/'}`;
-    console.log(path)
-    createPage({
-      path: path,
-      component:`${mdxtemplate}?__contentFilePath=${node.internal.contentFilePath}` ,
-      context: {
-        type: node.frontmatter.type, // "Using a Theme"
-        id: node.id
-      },
-    })
+  `).then((result : any)=>{
+      if (result.errors) {
+        console.error(result.errors)
+      }
+      result.data.allMdx.nodes.forEach((node : any) => {
+        if(node.internal.contentFilePath.includes("projhome")){return}
+
+        let path = node.internal.contentFilePath .split('/').pop().slice(0,-4)
+        path = path=='Portfolio'? '/':path
+        //console.log(node.frontmatter.test)
+        createPage({
+          path: path,
+          component:`${Template}?__contentFilePath=${node.internal.contentFilePath}` ,
+          context: {
+            id: node.id
+          },
+        })
+      })
+  }) 
+
+  //TODO make a query
+  const projPrm = new Promise((res)=> {
+      (['Backend', 'Devops','Frontend', 'Systems', 'Apps']).forEach((type : String) => {
+        createPage({
+            path:'Projects/'+type,
+              component:`${Projhome}?__contentFilePath=${path.resolve(`content/projhome/${type}.mdx`)}` ,
+              context: {
+                  type: type
+            },
+        })  
+        
+      })
+      res(null);
   })
+
+  return Promise.all([mdxPrm,projPrm])
 }
