@@ -1,0 +1,65 @@
+* { outline: 1px solid red; }
+
+html, body{
+    margin:0;
+    height:100%;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.test {
+    color:"white";
+}
+/*root container of view*/
+.pane, .main{ 
+    display:flex;
+    flex-direction:column;
+    height:99%;
+    width:99%;
+}
+
+/*TODO @media whe window is large be row */
+/*.main {flex-direction:row;}*/
+
+/*makes these two stay at the top and split off
+ *note page is the page info
+ */
+.content, .page-info{
+    flex-grow:1;
+    margin:5px;
+}
+
+/*status items */
+.status {
+   justify-self:flex-end;
+   align-self:flex-end;
+   width:100%;
+   display:flex;
+   margin:0;
+   padding:0;
+
+}
+
+/*center things now */
+.page-info,.info{
+    display:flex;
+    align-content:flex-start;
+}
+
+/*end of status window */
+.info {
+    align-self:center;
+}
+/*status boxes*/
+.status-value {
+    padding:5px;
+    background-color:yellow;
+    display:flex;
+}
+/*information window at bottom TODO shrinks with panes*/
+.console{
+    height:45px;
+    padding:1px;
+}
