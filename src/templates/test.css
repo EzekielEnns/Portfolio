@@ -1,0 +1,25 @@
+.projGrid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 10%;
+    width: 100%;
+}
+
+/* Inline #3 | http://localhost:8000/Projects/Backend */
+
+.projGrid > div {
+  border: solid 1px;
+  padding: 5px;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+#test {
+    width: 100%;
+}
+@media only screen and (max-width:600px) {
+    .projGrid {
+        align-content: center;
+    }
+}
