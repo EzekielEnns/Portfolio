@@ -6,8 +6,8 @@ import {useLocation} from "@reach/router";
 import { MDXProvider } from "@mdx-js/react";
 
 export const TempBody = ({id='',children}) => (
-      <div className={style.content} id={id}>
-        <div className={style.mdx}> {children} </div>
+      <div className={style.content} >
+        <div className={style.mdx}id={id} > {children} </div>
       </div>
 )
 
