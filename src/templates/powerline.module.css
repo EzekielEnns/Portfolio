@@ -29,7 +29,7 @@ Website: https://github.com/vivekascoder/powerline.css
 }
 
 .notCurrent {
-    background-color:grey; 
+    background-color:#0B1354; 
 
 }
 
@@ -37,6 +37,19 @@ Website: https://github.com/vivekascoder/powerline.css
     color: white;
     margin-left:auto;
 }
+.side>a{
+    color: white;
+    
+}
+.home{
+    background-color: #F765A3;
+}
+
+.notHome{
+    background-color: #A155B9;
+}
+
+
 
 .front{
     background-color: transparent;
@@ -46,16 +59,18 @@ Website: https://github.com/vivekascoder/powerline.css
     padding: 3px 1.25rem;
     margin-right: -14px;
     cursor: pointer;
+   font-size: 0.8em;
+   letter-spacing: 1px;
 
 }
 
 /* Background */
-.dracula-background{background-color: #282a36;}
+.dracula-background{background-color: #0B1354;}
 .dracula-currentline{background-color: #44475a;}
 .dracula-foreground{background-color: #f8f8f2;}
 .dracula-comment{background-color: #6272a4;}
-.dracula-cyan{background-color: #8be9fd;}
-.dracula-green{background-color: #50fa7b;}
+.dracula-cyan{background-color: #F765A3;}
+.dracula-green{background-color: #A155B9;}
 .dracula-orange{background-color: #ffb86c;}
 .dracula-pink{background-color: #ff79c6;}
 .dracula-purple{background-color: #bd93f9;}

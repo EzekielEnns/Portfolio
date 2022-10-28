@@ -23,11 +23,11 @@ export const data = {
         { 
           data: [ 0, 0, 0, 0, 0, ],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.5)',
-            'rgba(54, 162, 235, 0.5)',
-            'rgba(255, 206, 86, 0.5)',
-            'rgba(75, 192, 192, 0.5)',
-            'rgba(215, 66, 245, 0.5)',
+            'rgba(255, 99, 132, 1.5)',
+            'rgba(247,101, 163, 1.8)',
+            'rgba(22, 91, 170, 1.8)',
+            'rgba(11, 19, 84,1.7)',
+            'rgba(215, 66, 245, 1.5)',
            ],
             borderWidth: 1,
         },
@@ -91,7 +91,7 @@ export function Projects () {
                             color:(t)=>(data.datasets[0].backgroundColor[t.index]),
                             display:true,
                             centerPointLabels:true,
-                            font:{ size:20, },
+                            font:{ size:20, weight:"bold" },
                         },
                         ticks:{ display:false }
                     },

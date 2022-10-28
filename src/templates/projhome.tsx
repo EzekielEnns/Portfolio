@@ -11,9 +11,9 @@ export default function Projhome({children,data}){
                 {children}
                 <div className="projGrid">
                 {projects.map( ({node:{frontmatter,internal}},i)=>(
-                    <div onClick={()=>navigate(
+                    <div  onClick={()=>navigate(
                         `/${internal.contentFilePath .split('/').pop().slice(0,-4)}`)}  key={i}> 
-                        <h1>{internal.contentFilePath .split('/').pop().slice(0,-4)}</h1>
+                        <h1>{frontmatter?.title ??internal.contentFilePath .split('/').pop().slice(0,-4)}</h1>
                         {frontmatter?.hook?? 'Comming soon'}
                     </div>)
                 )}
@@ -35,6 +35,7 @@ query ($type: [String]) {
         frontmatter {
             purpose
             hook
+            title
         }
         internal {
           contentFilePath

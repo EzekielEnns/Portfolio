@@ -18,8 +18,37 @@
 #test {
     width: 100%;
 }
+
+.projItem {
+    display: flex;
+}
+.projCard {
+    width: 50%;
+}
+
+.bar{
+    display: flex;
+}
+
+
+
+.value {
+    width: 100%;
+    height: 5px;
+    background-color: fuchsia;
+}
+
+
 @media only screen and (max-width:600px) {
     .projGrid {
         align-content: center;
     }
+    .projItem{
+        flex-direction: column;
+    }
+    .stats{
+
+    }
 }
+
+

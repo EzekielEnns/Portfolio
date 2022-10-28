@@ -4,6 +4,7 @@ import * as style from "./template.module.css"
 import * as powerline from "./powerline.module.css"
 import {useLocation} from "@reach/router";
 import { MDXProvider } from "@mdx-js/react";
+import { FaBeer, FaGithub, FaLinkedin, FaMailBulk } from 'react-icons/fa';
 
 export const TempBody = ({id='',children}) => (
       <div className={style.content} >
@@ -14,7 +15,7 @@ export const TempBody = ({id='',children}) => (
 
 export default function Template({children}) {
   const {pathname}= useLocation();
-
+  console.log(pathname)
   return (
   <>
     <div id="main">
@@ -31,17 +32,15 @@ export default function Template({children}) {
       </MDXProvider>
     </div>
     <div className={[style.nav, powerline.powerline, powerline.draculaBackground].join(' ')}>
-        <span className={[powerline.front, powerline.draculaCyan].join(' ')}>
-           <Link to="/Portfolio/#about">About</Link> 
+        <span className={[powerline.front, powerline.draculaCyan, pathname!='/'?powerline.draculaGreen:''].join(' ')}>
+           <Link to="/">Home</Link> 
         </span> 
-        <span className={[powerline.powerlineComponent, powerline.draculaOrange,powerline.notCurrent].join(' ')}>
-           <Link to="/Portfolio/#projects">Projects</Link> 
-        </span> 
-        <span className={[powerline.powerlineComponent, powerline.draculaPurple, powerline.notCurrent].join(' ')}>
-           <Link to="/Portfolio/#contact">Contact</Link> 
+        <span className={[powerline.powerlineComponent, powerline.notCurrent].join(' ')}>
         </span> 
         <span className={[powerline.powerlineComponent,powerline.side ].join(' ')}>
-           {'-- '+pathname.split("/")[1]+' --'}
+            <a href="https://www.linkedin.com/in/ezekiel-enns/" target="_blank"> <FaLinkedin/> </a> 
+            <a href="https://github.com/EzekielEnns" target="_blank"> <FaGithub/> </a>
+            <a href="mailto:  ezekiel.enns@pm.me" target="_blank"> <FaMailBulk/> </a>
         </span> 
     </div>
  </>)
