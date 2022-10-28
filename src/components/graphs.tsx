@@ -42,7 +42,6 @@ export function Projects () {
     const clicker = (event : any) => {
         if (chartRef.current != undefined) {
             let page =data.labels[getElementAtEvent(chartRef.current,event)[0].index] 
-            console.log(page)
             navigate(`Projects/${page}/`)
         }
     }

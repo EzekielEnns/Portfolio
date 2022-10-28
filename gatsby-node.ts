@@ -29,7 +29,6 @@ exports.createPages = async ({ actions, graphql }) => {
 
         let path = node.internal.contentFilePath .split('/').pop().slice(0,-4)
         path = path=='Portfolio'? '/':path
-        //console.log(node.frontmatter.test)
         createPage({
           path: path,
           component:`${Template}?__contentFilePath=${node.internal.contentFilePath}` ,

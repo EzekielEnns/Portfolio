@@ -18,7 +18,6 @@ const IndexPage  = () => {
         <TempBody id={"hi"}>
             {/*https://www.npmjs.com/package/react-syntax-highlighter*/ }
             <SyntaxHighlighter showLineNumbers={true} language="javascript"style={atelierCaveDark} >
-                console.log("hello world")
             </SyntaxHighlighter>
         </TempBody>
         </Template>

@@ -4,7 +4,6 @@ import Template, { TempBody } from "./template"
 import "./test.css"
 export default function Projhome({children,data}){
     const {allMdx:{edges:projects}} = data;
-    console.log(projects)
     return(
         <Template>
             <TempBody id="test">

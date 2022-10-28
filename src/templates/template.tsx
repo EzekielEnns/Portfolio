@@ -15,7 +15,6 @@ export const TempBody = ({id='',children}) => (
 
 export default function Template({children}) {
   const {pathname}= useLocation();
-  console.log(pathname)
   return (
   <>
     <div id="main">
@@ -32,7 +31,7 @@ export default function Template({children}) {
       </MDXProvider>
     </div>
     <div className={[style.nav, powerline.powerline, powerline.draculaBackground].join(' ')}>
-        <span className={[powerline.front, powerline.draculaCyan, pathname!='/'?powerline.draculaGreen:''].join(' ')}>
+        <span className={[powerline.front, powerline.draculaCyan, pathname!='/Portfolio/'?powerline.draculaGreen:''].join(' ')}>
            <Link to="/">Home</Link> 
         </span> 
         <span className={[powerline.powerlineComponent, powerline.notCurrent].join(' ')}>
