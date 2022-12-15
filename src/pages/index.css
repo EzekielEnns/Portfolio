@@ -1,0 +1,40 @@
+body {
+    background-color: #dcbcc6;
+    font-family: Monospace;
+}
+
+#container {
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-around;
+}
+
+#container > h1 {
+    font-size: 5em;
+    padding-left: 2%;
+    text-transform: uppercase;
+}
+
+#cardHolder{
+     display: flex;
+     justify-content: center;
+     gap: 5%;
+     padding: 2%;
+}
+
+
+
+#cardHolder > a {
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and ( (max-width:600px) or (max-height:600px)) {
+    #cardHolder{
+        flex-direction:column;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+}
+
+

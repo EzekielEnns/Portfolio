@@ -1,0 +1,18 @@
+.content {
+  padding: 20px;
+  font-size: 2.1em;
+  padding-left: 2%;
+  border: 4px solid;
+  background-color: #c6e6dc;
+  margin: 0 10% 0 10%;
+}
+
+.title {
+  letter-spacing: 10px;
+}
+
+@media only screen and ( (max-width:600px) or (max-height:600px)) { 
+    .title {
+      letter-spacing: 8px;
+    }
+}
