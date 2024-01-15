@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-iconify'
+import Layout from '../layouts/Layout.astro';
+import dayjs from 'dayjs'; 
+import utc from "dayjs/plugin/utc"
+dayjs.extend(utc)
+
+const lastMod = dayjs()
+     .utc(Astro.props.frontmatter.lastModified)
+     .format("HH:mm:ss DD MMMM YYYY UTC");
+
+const {frontmatter} = Astro.props
+---
+<Layout title='post'>
+<div class="min-h-min min-w-min flex justify-center">
+    <div class="w-11/12 md:w-9/12 pt-5">
+        <div class="flex justify-between">
+        <a href="/blog/" class="text-[0.9em]"> more projects</a>
+        <h1 class="pb-5 flex gap-1">{frontmatter.title}
+        <a href={frontmatter.git}><Icon name="la:git" style={{width:"1.3em",color:"#f54e0b"}}/></a>
+        </h1>
+        <i class="text-[0.9em]">{lastMod}</i>
+        </div>
+        <slot />
+    </div>
+</div>
+</Layout>
+<style is:inline>
+    h1, h2 {font-size: initial; padding-bottom: 1.4em;}
+    ul {margin: initial;margin-left: 5em; padding-bottom: 1em;}
+    li {list-style: initial; padding: initial; margin: initial; }
+
+    a {color: blue !important; text-decoration: underline;}
+    /*TODO fix*/
+    p {padding-bottom: 1.3em;}
+    pre {
+        margin-top: 1.2em;
+        margin-bottom: 1.2em;
+        padding: 1em;
+    }
+
+    pre {
+    	@apply rounded-md pl-8;
+    }
+
+    pre code {
+    	@apply block leading-tight p-2 pl-1;
+    	border-left: 1px solid rgba(115, 138, 148, 0.4);
+    	counter-reset: step;
+    	counter-increment: step 0;
+    }
+
+    pre code .line {
+    	@apply relative;
+    }
+
+    pre code .line::before {
+    	@apply absolute overflow-hidden w-7 h-4 -left-9 top-0 text-right;
+    	content: counter(step) " | ";
+    	counter-increment: step;
+        color: antiquewhite;
+        font-style: italic;
+        padding-right: 1.2em;
+    }
+        img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+        width: 50%;
+    }
+</style>

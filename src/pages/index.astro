@@ -1,0 +1,104 @@
+---
+import { Icon } from 'astro-iconify'
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const allPosts = await Astro.glob('../pages/posts/*.md*')
+const test = JSON.stringify( 
+    allPosts.map((p)=>({...p.frontmatter,raw:p.rawContent(),url:p.url}))
+)
+
+
+---
+<Layout title="Ezekiel Enns">
+
+<div class="min-h-min min-w-min flex justify-center">
+    <div class="w-full pb-5 scroll-smooth">
+    <main>
+        <header class="flex items-center justify-center  h-44">
+            <h1 class="text-5xl bold uppercase border-amber-600 border-4 p-2 shadow-md">Ezekiel<br/> Enns</h1>
+        </header>
+        <div class="flex justify-center items-center flex-col p-3">
+            <p class="pb-5 w-80 text-center">
+                Programing is more than just a job for me, it's a genuine passion and a 
+                Contanst source of both professional fulfilment and personal satisfaction. 
+                My expertise  as a full stack developer is accentuated by a profound understanding of 
+                Computer engineering enabling me to navigate intregreate challenges 
+                within expansive interconnected systems.
+            </p>
+            <p class="pb-5 text-center w-80">
+                I love dealing with the finer details of the backend and frontend,
+                bellow you'll find a list of some of my personal projects, the template is 
+                ment to be simple concise no more than 200 words per project.
+            </p>
+            <div class="justify-center flex 
+                        text-black w-max h-max 
+                        border-black border-b-2 pl-2">
+            <my-search data-posts={test}/>
+                <div class="bg-transparent  
+                                focus:outline-none  placeholder:text-black 
+                                focus:placeholder:text-transparent
+                                 p-0.5" />
+                    <input type="text" id="search" placeholder="search" class="outline-none pb-1"></input>
+                <Icon name="material-symbols:search" style={{width:"1.2em"}}/>
+            </div>
+            <div class="p-2 flex gap-2">
+                <a href="https://www.linkedin.com/in/ezekiel-enns/">
+                    <Icon name="ri:linkedin-fill" style={{width:"1.4em", color:"#f54e0b"}}/>
+                </a>
+                <a href="mailto:ezekiel.enns@protonmail.com">
+                    <Icon name="material-symbols:mail-sharp" style={{width:"1.4em",color:"#f54e0b"}}/>
+                </a>
+                <a href="https://github.com/EzekielEnns" >
+                    <Icon name="cib:github" style={{width:"1.4em", color:"#f54e0b"}}/>
+                </a>
+
+            </div>
+        </div>
+        <!--TODO make scroll just for here 
+                https://codepen.io/JavaScriptJunkie/pen/BGNELL
+        -->
+        <div id="list"  class=" pt-10 w-full flex flex-col justify-center gap-3 items-center" >
+        {
+            allPosts.map((p)=><Card tags={p.frontmatter.tags} href={p.url} git={p.frontmatter.git} title={p.frontmatter.title} />)
+        }
+        </div>
+    </main>
+    </div>
+</div>
+</Layout>
+
+<script> 
+    import Fuse from "fuse.js";
+
+    const search = document.querySelector("#search"); //for searching for blog post
+    const list = document.querySelector("#list"); //for searching for blog post
+    class Search extends HTMLElement{
+        fuse:Fuse<string>
+        constructor() {
+
+            super()
+            console.log(JSON.parse(this.dataset.posts))
+            this.emls = document.querySelectorAll(".POST") 
+           this.fuse = new Fuse(JSON.parse(this.dataset.posts??""),{
+                keys:["title","tags","raw"],
+                includeScore:true,
+                ignoreLocation: true                
+            })
+            console.log(this.emls)
+            search.addEventListener("input",(e)=>{
+                if (e.target.value == "") {
+                    list?.replaceChildren(...this.emls)
+                    return
+                }
+                let results = this.fuse.search(e.target.value)
+                console.log(results)
+                let test = Array.prototype.filter.call(this.emls,(em)=> results.some((r)=>r.item.url == em.id)  )
+                
+                list?.replaceChildren(...test)
+
+            })
+        }
+    }
+    customElements.define('my-search',Search)
+</script>
+
