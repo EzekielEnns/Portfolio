@@ -5,8 +5,8 @@ import { remarkModifiedTime } from './remark-modified-time.mjs';
 
 // https://astro.build/config
 export default defineConfig({
-  site:"https://ezekielenns.github.io/portfolio/",
-  base:"portfolio/",
+  site:"https://ezekielenns.github.io/Portfolio/",
+  base:"Portfolio/",
   integrations: [tailwind({
       configFile:"./tailwind.config.cjs"
   })],
