@@ -1,0 +1,46 @@
+---
+import { Icon } from 'astro-iconify'
+interface Props {
+	title: string;
+	href: string;
+  git: string;
+  tags: Array<string>;
+
+}
+//TODO add links
+const { href, git, title, tags} = Astro.props;
+---
+
+<div id={href} class="POST flex border-black border w-3/4 md:w-1/2 p-3">
+    <a href={href} class="block"> 
+    <h2 class="text-[1.5em]">
+        {title}
+    </h2>
+    <div class="items-end flex gap-0.5 flex-wrap">
+      { tags?.map((t)=>(
+        
+      <div
+        class="[word-wrap: break-word] 
+          h-[20px] my-[5px] mr-0.5 flex 
+          px-[12px] py-0 text-[12px] 
+          items-center justify-between 
+          rounded-[16px] 
+          bg-[#eceff1] 
+          font-normal normal-case text-[#4f4f4f] shadow-none 
+          
+          dark:bg-neutral-600 dark:text-neutral-200"
+        data-te-close="true">
+        {t}
+      </a> 
+      ))
+      }
+    </div>
+  </div>
+    <div class="ml-auto flex gap-0.5">
+        <!--
+        <Icon name="material-symbols-light:dropdown-outline-sharp" style={{width:"1.3em", }}/>
+        -->
+        <a href={git}><Icon name="la:git" style={{width:"1.3em",color:"#f54e0b"}}/></a>
+        <a href={href}><Icon name="icomoon-free:new-tab" style={{width:"1.3em", color:"#f54e0b"}}/></a>
+    </div>
+</div>
