@@ -13,7 +13,7 @@ like 3js and pixijs render pure strings instead of characters.
 I needed to make a library that enabled me to have per character control.
 
 # Outcomes
-![Testing this](https://github.com/EzekielEnns/glyphlib/blob/main/glyph.gif?raw=true)
+![Demo](https://github.com/EzekielEnns/glyphlib/blob/main/glyph.gif?raw=true)
 the api is very simple, it works based on layers, you have a control object that manages the 
 state of the webgl2 context, a layer which manages the text you want to render (*new layers
 are on top of older layers*) and webgl data buffers are mapped to indivisual characters 

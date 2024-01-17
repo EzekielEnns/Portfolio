@@ -13,6 +13,8 @@ Built a Golang server that handles signaling for peer connections.
 Found out very little in documentation of changes to ICE protocol and had to create a 
 work-around to handle the new way RTC Peers work with trickle ICE
 
+![Demo](https://github.com/EzekielEnns/example_webrtc/blob/main/webrtc.gif?raw=true)
+
 Created a simple frontend, using tailwind and Js Doc for types,
 this very minimal example deals with: trickle ice, candidate gathering and onboarding new peers.
 
