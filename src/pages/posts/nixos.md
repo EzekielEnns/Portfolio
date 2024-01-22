@@ -18,7 +18,7 @@ using league of legends like keybindings reuses my muscle memeory.
 - fzf and bash: a bash script that looks for default.nix files inside a projects folder and spawns
 my editor setup (*kitty + neovim*)
 
-![What I see when I boot up](/media/desktop.png)
+![What I see when I boot up](../../../public/media/desktop.png)
 
 # Conclusion
 Nix is a hard os to follow, but if you sit down and learn it you will get a awesome 
