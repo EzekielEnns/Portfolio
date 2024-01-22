@@ -2,7 +2,7 @@
 layout: ../../layouts/markdown.astro
 title: "\"Free\" Server"
 tags: [ webrtc, web sockets, js, golang, server, client side, js Doc ]
-git:  https://github.com/EzekielEnns/example_webrtc2
+git:  https://github.com/EzekielEnns/example_webrtc
 ---
 # Problem
 there are not any good examples of simple WebRTC applications,
@@ -13,7 +13,7 @@ Built a Golang server that handles signaling for peer connections.
 Found out very little in documentation of changes to ICE protocol and had to create a 
 work-around to handle the new way RTC Peers work with trickle ICE
 
-![Demo](https://github.com/EzekielEnns/example_webrtc/blob/main/webrtc.gif?raw=true)
+![Demo](/media/webrtc.gif)
 
 Created a simple frontend, using tailwind and Js Doc for types,
 this very minimal example deals with: trickle ice, candidate gathering and onboarding new peers.

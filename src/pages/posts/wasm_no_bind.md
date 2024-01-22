@@ -2,7 +2,7 @@
 layout: ../../layouts/markdown.astro
 title: "Debloating Assembly"
 tags: [Web Assembly, Rust, Memory Managment, JavaScript]
-git:  https://github.com/EzekielEnns/glyphlib
+git: https://github.com/EzekielEnns/example_wasm_no_bindgen
 ---
 
 # Problem
@@ -14,6 +14,10 @@ a very complex demo of how `wasm-bindgen` is incredibly important,
 this demo reads raw memory locations and directly has to translate binary
 into something meaningful either in the rust backend or the JavaScript frontend.
 [use hjkl to move in this demo](https://ezekielenns.github.io/example_wasm_no_bindgen/)
+
+more research also lead me to figure out how to deal with direct memeory allocated to 
+the wasm program and modify it in js
+![example](/media/wasmnobindgen.png)
 
 # Conclusion
 turns out Web Assembly is like running a executable in a virtual enviroment, in the browser

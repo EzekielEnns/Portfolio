@@ -24,7 +24,7 @@ const test = JSON.stringify(
                 level api's, hosting and deploying servers, and so much more.
             </p>
             <p class="pb-5 text-center w-80">
-                Bellow you'll find a list of some of my personal projects, the template is 
+                Below you'll find a list of some of my personal projects, the template is 
                 ment to be simple concise no more than 200 words per project.
             </p>
             <div class="justify-center flex 
@@ -73,28 +73,30 @@ const test = JSON.stringify(
         fuse:Fuse<string>
         constructor() {
 
-            super()
-            console.log(JSON.parse(this.dataset.posts))
-            this.emls = document.querySelectorAll(".POST") 
-           this.fuse = new Fuse(JSON.parse(this.dataset.posts??""),{
-                keys:["title","tags"],
+        super()
+        this.emls = document.querySelectorAll(".POST") 
+        this.fuse = new Fuse(JSON.parse(this.dataset.posts??""),{
+            keys:[{name:"title",weight:2},{name:"tags",weight:1}],
                 includeScore:true,
-                ignoreLocation: true                
-            })
-            console.log(this.emls)
-            search.addEventListener("input",(e)=>{
-                if (e.target.value == "") {
-                    list?.replaceChildren(...this.emls)
-                    return
-                }
-                let results = this.fuse.search(e.target.value)
-                console.log(results)
-                //TODO sort
-                let test = Array.prototype.filter.call(this.emls,(em)=> results.some((r)=>r.item.url == em.id)  )
-                
-                list?.replaceChildren(...test)
+        })
+        //@ts-ignore
+        search.addEventListener("input",(e)=>{
+            if (e?.target?.value == "") {
+                list?.replaceChildren(...this.emls)
+                return
+            }
+            let results = this.fuse.search(e.target.value)
+            console.log(results)
+            let test = Array.prototype.toSorted.call(this.emls,(a,b)=>{
+                //if a < b -- < 0 if a > b -- > 0 if a = b -- 0
+                let resA = results?.find((v)=>(v.item.url == a.id))?.score ?? 1,
+                    resB = results?.find((v)=>(v.item.url == b.id))?.score??1;
+                return (
+                    resA - resB
+                )})
+            list?.replaceChildren(...test)
 
-            })
+        })
         }
     }
     customElements.define('my-search',Search)

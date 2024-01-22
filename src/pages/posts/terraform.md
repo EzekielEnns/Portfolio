@@ -2,7 +2,7 @@
 layout: ../../layouts/markdown.astro
 title: "Template with Swagger"
 tags: [ Swagger, Rest, Terraform, Aws, Lambda]
-git:  https://github.com/EzekielEnns/example_webrtc2
+git: https://github.com/EzekielEnns/Terraform-Rest-Aws
 ---
 
 # Problem 
