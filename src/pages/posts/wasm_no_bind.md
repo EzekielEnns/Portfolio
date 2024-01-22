@@ -17,7 +17,7 @@ into something meaningful either in the rust backend or the JavaScript frontend.
 
 more research also lead me to figure out how to deal with direct memeory allocated to 
 the wasm program and modify it in js
-![example](/media/wasmnobindgen.png)
+![example](Portfolio/media/wasmnobindgen.png)
 
 # Conclusion
 turns out Web Assembly is like running a executable in a virtual enviroment, in the browser
