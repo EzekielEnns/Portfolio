@@ -1,0 +1,14 @@
+# My Portfolio 🙌
+- [ ] Make Tags
+- [ ] Make Media Manager i.e. one for videos one for images
+    - expand mode to carousel
+- [ ] add content
+    - projects
+- [ ] add content organization
+    - tabs or something alike
+- [ ] Add Final Page
+    - about me & work exp & education & Contact me
+- [ ] style with colour theme and custom tokens
+    - spacing token
+    - default bg colours....
+- [ ] deploy
