@@ -1,7 +1,8 @@
 # My Portfolio 🙌
-- [ ] Make Tags
-- [ ] Make Media Manager i.e. one for videos one for images
-    - expand mode to carousel
+- [x] Make Tags
+- [x] Make Media Manager i.e. one for videos one for images
+- [ ] add icons 
+- [ ] make popup via imposter layout
 - [ ] add content
     - projects
 - [ ] add content organization
@@ -12,3 +13,5 @@
     - spacing token
     - default bg colours....
 - [ ] deploy
+
+https://devicon.dev/

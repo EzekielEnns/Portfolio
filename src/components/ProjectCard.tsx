@@ -1,37 +1,27 @@
-import { Box, Frame, styled, Cluster } from "@styled-system/jsx";
-import { PropsWithChildren } from "react";
+import { Box, Cluster } from "@styled-system/jsx";
+import { ProjectMedia } from "components/ProjectMedia";
+import { ProjectTag } from "components/ProjectTag";
+import { ReactNode } from "react";
 
-export default function ProjectCard(props: PropsWithChildren) {
+type Props = {
+  tags: string[];
+  children: ReactNode;
+  src: string;
+};
+export default function ProjectCard(props: Props) {
   return (
     <Box>
-      <Frame
-        denominator={4}
-        numerator={5}
-        objectPosition={"top"}
-        pos={"relative"}
-      >
-        <img src="https://i.redd.it/d6x1xay6ckze1.jpeg" />
-        <styled.button
-          bgColor={"white"}
-          w={"2rem"}
-          h={"2rem"}
-          position={"absolute"}
-          zIndex={3}
-          bottom={0}
-          right={0}
-          m={"1rem"}
-          borderRadius={"12px"}
-        >
-          [+]
-        </styled.button>
-      </Frame>
-      <Cluster>
-        <div>Cksoftware</div>
-        <div>React</div>
-        <div>TypeScript</div>
+      <ProjectMedia src={props.src} />
+      <Cluster mt={".5ch"} spacing={".5ch"}>
+        {props.tags.map((r, i) => (
+          <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
+        ))}
+        <ProjectTag>CkSoftware</ProjectTag>
+        <ProjectTag>React</ProjectTag>
+        <ProjectTag>TypeScript</ProjectTag>
       </Cluster>
       <Box border={"none"}>
-        <p>{props.children ?? "Hello World"}</p>
+        <p>{props.children}</p>
       </Box>
     </Box>
   );
