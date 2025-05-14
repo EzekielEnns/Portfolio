@@ -32,7 +32,6 @@ export function ProjectMedia(props: Props) {
         h={"1.4rem"}
         p={"0.2ch"}
         position={"absolute"}
-        zIndex={3}
         bottom={0}
         right={0}
         display={"flex"}

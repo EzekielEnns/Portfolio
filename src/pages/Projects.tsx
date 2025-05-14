@@ -24,6 +24,18 @@ export default function Projects() {
           >
             did a thing
           </ProjectCard>
+          <ProjectCard
+            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
+            tags={["React", "Typescript"]}
+          >
+            did a thing
+          </ProjectCard>
+          <ProjectCard
+            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
+            tags={["React", "Typescript"]}
+          >
+            did a thing
+          </ProjectCard>
         </Grid>
       </CoverBody>
     </Cover>

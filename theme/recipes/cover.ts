@@ -1,5 +1,5 @@
 import { defineSlotRecipe } from "@pandacss/dev";
-export const coverStyles = defineSlotRecipe({
+export const cover = defineSlotRecipe({
   className: "cover",
   slots: ["root", "body", "header", "footer"],
   base: {

@@ -5,7 +5,8 @@ import { box } from "./theme/patterns/box";
 import { grid } from "./theme/patterns/grid";
 import { cluster } from "./theme/patterns/cluster";
 import { switcher } from "./theme/patterns/switcher";
-import { coverStyles } from "./theme/recipes/cover";
+import { cover } from "./theme/recipes/cover";
+import { imposter } from "./theme/recipes/imposter";
 
 export default defineConfig({
   jsxFramework: "react",
@@ -31,7 +32,8 @@ export default defineConfig({
   theme: {
     extend: {
       recipes: {
-        cover: coverStyles,
+        cover,
+        imposter,
       },
       tokens: {},
     },
