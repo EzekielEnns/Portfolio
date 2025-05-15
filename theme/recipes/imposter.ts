@@ -8,7 +8,7 @@ export const imposter = defineRecipe({
     transform: "translate(-50%,-50%)",
   },
   variants: {
-    contain: {
+    test: {
       true: {
         "--margin": "0px",
         overflow: "auto",
@@ -18,6 +18,6 @@ export const imposter = defineRecipe({
     },
   },
   defaultVariants: {
-    contain: false,
+    test: false,
   },
 });

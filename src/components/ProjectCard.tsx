@@ -1,19 +1,22 @@
 import { Box, Cluster } from "@styled-system/jsx";
+import Modal from "components/Modal";
+import { ProjectExpandView } from "components/ProjectExpandedView";
 import { ProjectMedia } from "components/ProjectMedia";
 import { ProjectTag } from "components/ProjectTag";
-import { Imposter } from "layout/pandas/Imposter";
+import { Title } from "components/ProjectTitle";
 import { ReactNode, useState } from "react";
 
-type Props = {
+export type ProjectCardProps = {
   tags: string[];
   children: ReactNode;
   src: string;
 };
-export default function ProjectCard(props: Props) {
+export default function ProjectCard(props: ProjectCardProps) {
   const [expand, setExpand] = useState(false);
   return (
     <>
-      <Box>
+      <Box bgColor={"white"} scrollSnapAlign={"start"}>
+        <Title>Some Project</Title>
         <ProjectMedia
           src={props.src}
           onClick={() => {
@@ -24,9 +27,6 @@ export default function ProjectCard(props: Props) {
           {props.tags.map((r, i) => (
             <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
           ))}
-          <ProjectTag>CkSoftware</ProjectTag>
-          <ProjectTag>React</ProjectTag>
-          <ProjectTag>TypeScript</ProjectTag>
         </Cluster>
         <Box border={"none"}>
           <p>{props.children}</p>
@@ -34,44 +34,13 @@ export default function ProjectCard(props: Props) {
       </Box>
       {expand && (
         <>
-          <Imposter
-            //TODO make a backdrop component or turn this into a component
-            //TODO maybe portal it upwards
-            //TODO make click off close the popup
-            //TODO make the layout for this a hell of a lot better just rework the whole thing
-            width={"100vw"}
-            height={"100vh"}
-            zIndex={1} //TODO remove
-            borderColor={`rgba(255, 255, 255, 0.2)`}
-            backdropFilter={"blur(10px)"}
-          />
-          <Imposter width={"60vw"} height={"90vh"} zIndex={"1000"}>
-            {/*this has to be portaled to the bottom of the dom*/}
-            <Box
-              bgColor={"white"}
-              w={"100%"}
-              h={"100%"}
-              position={"relative"} //TODO place an x button to close
-            >
-              <ProjectMedia
-                src={props.src}
-                onClick={() => {
-                  setExpand((o) => !o);
-                }}
-              />
-              <Cluster mt={".5ch"} spacing={".5ch"}>
-                {props.tags.map((r, i) => (
-                  <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
-                ))}
-                <ProjectTag>CkSoftware</ProjectTag>
-                <ProjectTag>React</ProjectTag>
-                <ProjectTag>TypeScript</ProjectTag>
-              </Cluster>
-              <Box border={"none"}>
-                <p>{props.children}</p>
-              </Box>
-            </Box>
-          </Imposter>
+          <Modal
+            onClick={() => {
+              setExpand((o) => !o);
+            }}
+          >
+            <ProjectExpandView {...props} />
+          </Modal>
         </>
       )}
     </>
