@@ -4,19 +4,28 @@ import { ProjectExpandView } from "components/ProjectExpandedView";
 import { ProjectMedia } from "components/ProjectMedia";
 import { ProjectTag } from "components/ProjectTag";
 import { Title } from "components/ProjectTitle";
-import { ReactNode, useState } from "react";
+import { ReactNode, useMemo, useState } from "react";
 
 export type ProjectCardProps = {
   tags: string[];
+  af: Set<string>;
   children: ReactNode;
   src: string;
+  title: string;
 };
 export default function ProjectCard(props: ProjectCardProps) {
   const [expand, setExpand] = useState(false);
+  const render = useMemo(
+    () => props.af.size == 0 || props.tags.some((r) => props.af.has(r)),
+    [props.af, props.tags],
+  );
+  if (!render) {
+    return null;
+  }
   return (
     <>
       <Box bgColor={"white"} scrollSnapAlign={"start"}>
-        <Title>Some Project</Title>
+        <Title>{props.title}</Title>
         <ProjectMedia
           src={props.src}
           onClick={() => {
@@ -24,9 +33,14 @@ export default function ProjectCard(props: ProjectCardProps) {
           }}
         />
         <Cluster mt={".5ch"} spacing={".5ch"}>
-          {props.tags.map((r, i) => (
-            <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
-          ))}
+          {props.tags.map((r, i) => {
+            const active = props.af.has(r);
+            return (
+              <ProjectTag invert={active} key={`${i}-${props.children}`}>
+                {r}
+              </ProjectTag>
+            );
+          })}
         </Cluster>
         <Box border={"none"}>
           <p>{props.children}</p>

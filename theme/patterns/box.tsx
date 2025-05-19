@@ -10,7 +10,7 @@ export const box = definePattern({
       //TODO make a var for this too
       border: "1px solid black",
       "& *": {
-        color: "inherit",
+        //color: "inherit",
       },
       ...props,
     };

@@ -34,6 +34,7 @@ export default function Landing(props: { onClick?: () => void }) {
           p={"4px"}
           onClick={props.onClick}
         >
+          {/*TODO change to something with a bit more pazzas*/}
           ⇃Explore My Work⇂
         </styled.button>
       </CoverFooter>

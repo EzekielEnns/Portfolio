@@ -12,7 +12,7 @@ export default function Modal(
       <Imposter
         width={"100vw"}
         height={"100vh"}
-        zIndex={1} //TODO remove via portals
+        zIndex={1}
         borderColor={`rgba(255, 255, 255, 0.2)`}
         backdropFilter={"blur(10px)"}
       />

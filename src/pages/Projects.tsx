@@ -5,141 +5,125 @@ import { Box } from "layout/pandas/Box";
 import { Cluster } from "layout/pandas/cluster";
 import { Cover, CoverBody, CoverHeader } from "layout/pandas/Cover";
 import { Grid } from "layout/pandas/Grid";
+import { useState } from "react";
+import { FiFileText } from "react-icons/fi";
+import { GoPerson } from "react-icons/go";
 
+const filters = [
+  "CkSoftware",
+  "SaySo Communications",
+  "Golang",
+  "RealTime",
+  "React",
+  "JavaScript",
+  "Typescript",
+  "DevOps",
+  "Developer Tools",
+];
 export default function Projects() {
+  const [af, setAF] = useState<Set<string>>(new Set());
   return (
-    <Cover>
+    <Cover m={"8%"}>
       <CoverHeader>
-        <Box>
+        {/*TODO turn into buttons with a modal modal*/}
+        <Box display={"flex"}>
           <styled.h1 fontSize={"xx-large"}>Explore My Work</styled.h1>
+          <styled.div ml={"auto"} display={"flex"}>
+            <Box
+              display={"flex"}
+              flexDir={"column"}
+              border={"none"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <GoPerson fontSize={"2em"} />
+              <styled.span fontSize={"sm"} textAlign={"center"}>
+                About
+              </styled.span>
+            </Box>
+            <Box
+              display={"flex"}
+              flexDir={"column"}
+              border={"none"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <FiFileText fontSize={"2em"} />
+              <styled.span w={"100%"} fontSize={"sm"} textAlign={"center"}>
+                CV
+              </styled.span>
+            </Box>
+          </styled.div>
         </Box>
         <Cluster gap={"0.5em"} m={"1rem"}>
-          <styled.h1>Filter By Tag</styled.h1>
-          <ProjectTag>CkSoftware</ProjectTag>
-          <ProjectTag>SaySo</ProjectTag>
-          <ProjectTag>React</ProjectTag>
-          <ProjectTag>Go</ProjectTag>
-          <ProjectTag>CSharp</ProjectTag>
-          <ProjectTag>Cloud Infra</ProjectTag>
-          <ProjectTag>JavaScript</ProjectTag>
-          <ProjectTag>Typescript</ProjectTag>
-          <ProjectTag>Real-Time</ProjectTag>
-          <ProjectTag>Library Development</ProjectTag>
+          {filters.map((r) => (
+            <ProjectTag
+              invert={af.has(r)}
+              key={`${r}-tags`}
+              onClick={() => {
+                setAF((o) => {
+                  const nxt = new Set(o);
+                  if (nxt.has(r)) {
+                    nxt.delete(r);
+                  } else {
+                    nxt.add(r);
+                  }
+                  return nxt;
+                });
+              }}
+            >
+              {r}
+            </ProjectTag>
+          ))}
         </Cluster>
-        <Grid>
-          {/*TODO filter out projects based on tags, if 3+ tags are chosen show default blurb */}
-          <Box>
-            <styled.h1>JavaScript</styled.h1>
-            <hr />
-            <styled.p pb={"1rem"}>
-              I have 10 years Experience in industry, with a mountain of
-              projects, discover the projects I've done with each business, tool
-              or other category I've worked in
-            </styled.p>
-          </Box>
-          <Box>
-            <styled.h1>JavaScript</styled.h1>
-            <hr />
-            <styled.p pb={"1rem"}>
-              I have 10 years Experience in industry, with a mountain of
-              projects, discover the projects I've done with each business, tool
-              or other category I've worked in
-            </styled.p>
-          </Box>
-          <Box>
-            <styled.h1>JavaScript</styled.h1>
-            <hr />
-            <styled.p pb={"1rem"}>
-              I have 10 years Experience in industry, with a mountain of
-              projects, discover the projects I've done with each business, tool
-              or other category I've worked in
-            </styled.p>
-          </Box>
-          <Box>
-            <styled.h1>JavaScript</styled.h1>
-            <hr />
-            <styled.p pb={"1rem"}>
-              I have 10 years Experience in industry, with a mountain of
-              projects, discover the projects I've done with each business, tool
-              or other category I've worked in
-            </styled.p>
-          </Box>
-          <Box>
-            <styled.h1>JavaScript</styled.h1>
-            <hr />
-            <styled.p pb={"1rem"}>
-              I have 10 years Experience in industry, with a mountain of
-              projects, discover the projects I've done with each business, tool
-              or other category I've worked in
-            </styled.p>
-          </Box>
-        </Grid>
       </CoverHeader>
       <CoverBody>
-        <Grid minimum={300}>
+        <Grid minimum={300} max={0.5}>
+          {/*TODO load these in content style, via an import /export thing in the content section*/}
           <ProjectCard
+            af={af}
+            title="DeveloperPalooosa"
             src="https://preview.redd.it/what-if-we-had-tea-instead-official-riot-games-artwork-at-v0-kcs7n5k6u00f1.jpg?width=1080&crop=smart&auto=webp&s=515096df3f73eaa0ab19c2b1ad8b7719299c28b7"
-            tags={["Cksoftware"]}
+            tags={["Developer Tools", "DevOps"]}
           >
             Pick the approach that fits your use‑case: Pattern‑centric: bundle
             the logic into a one‑off pattern (great for layout abstractions)
           </ProjectCard>
           <ProjectCard
+            af={af}
+            title="Test Test"
             src="https://preview.redd.it/what-if-we-had-tea-instead-official-riot-games-artwork-at-v0-kcs7n5k6u00f1.jpg?width=1080&crop=smart&auto=webp&s=515096df3f73eaa0ab19c2b1ad8b7719299c28b7"
-            tags={["Cksoftware"]}
+            tags={["React", "Developer Tools"]}
           >
             Pick the approach that fits your use‑case: Pattern‑centric: bundle
             the logic into a one‑off pattern (great for layout abstractions)
           </ProjectCard>
           <ProjectCard
+            af={af}
+            title="WWEEEEEE"
             src="https://preview.redd.it/what-if-we-had-tea-instead-official-riot-games-artwork-at-v0-kcs7n5k6u00f1.jpg?width=1080&crop=smart&auto=webp&s=515096df3f73eaa0ab19c2b1ad8b7719299c28b7"
-            tags={["Cksoftware"]}
+            tags={["JavaScript", "Developer Tools"]}
           >
             Pick the approach that fits your use‑case: Pattern‑centric: bundle
             the logic into a one‑off pattern (great for layout abstractions)
           </ProjectCard>
           <ProjectCard
+            af={af}
+            title="Some Cool Rpc stuff"
             src="https://preview.redd.it/what-if-we-had-tea-instead-official-riot-games-artwork-at-v0-kcs7n5k6u00f1.jpg?width=1080&crop=smart&auto=webp&s=515096df3f73eaa0ab19c2b1ad8b7719299c28b7"
-            tags={["Cksoftware"]}
+            tags={["RealTime", "JavaScript", "Golang"]}
           >
             Pick the approach that fits your use‑case: Pattern‑centric: bundle
             the logic into a one‑off pattern (great for layout abstractions)
           </ProjectCard>
           <ProjectCard
-            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
-            tags={["React", "Typescript"]}
+            af={af}
+            title="Map Extravagansa"
+            src="https://preview.redd.it/what-if-we-had-tea-instead-official-riot-games-artwork-at-v0-kcs7n5k6u00f1.jpg?width=1080&crop=smart&auto=webp&s=515096df3f73eaa0ab19c2b1ad8b7719299c28b7"
+            tags={["CkSoftware"]}
           >
-            did a thing
-          </ProjectCard>
-          <ProjectCard
-            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
-            tags={["React", "Typescript"]}
-          >
-            did a thing
-          </ProjectCard>
-          <ProjectCard
-            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
-            tags={["React", "Typescript"]}
-          >
-            did a thing
-          </ProjectCard>
-          <ProjectCard
-            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
-            tags={["React", "Typescript"]}
-          >
-            did a thing
-          </ProjectCard>
-          <ProjectCard
-            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
-            tags={["React", "Typescript"]}
-          >
-            did a thing
-          </ProjectCard>
-          <ProjectCard
-            src="https://i.redd.it/d6x1xay6ckze1.jpeg"
-            tags={["React", "Typescript"]}
-          >
-            did a thing
+            Pick the approach that fits your use‑case: Pattern‑centric: bundle
+            the logic into a one‑off pattern (great for layout abstractions)
           </ProjectCard>
         </Grid>
       </CoverBody>

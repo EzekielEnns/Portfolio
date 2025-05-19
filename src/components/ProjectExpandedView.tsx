@@ -15,7 +15,7 @@ export const ProjectExpandView = (
           <Box h={"50vh"}>
             <ProjectMedia
               h="100%"
-              mW="100%"
+              w="100%"
               src={props.src}
               onClick={props.onClick}
             />
