@@ -4,10 +4,11 @@ import { ProjectExpandView } from "components/ProjectExpandedView";
 import { ProjectMedia } from "components/ProjectMedia";
 import { ProjectTag } from "components/ProjectTag";
 import { Title } from "components/ProjectTitle";
+import { Tags } from "content";
 import { ReactNode, useMemo, useState } from "react";
 
 export type ProjectCardProps = {
-  tags: string[];
+  tags: Tags[];
   af: Set<string>;
   children: ReactNode;
   src: string;
@@ -46,17 +47,14 @@ export default function ProjectCard(props: ProjectCardProps) {
           <p>{props.children}</p>
         </Box>
       </Box>
-      {expand && (
-        <>
-          <Modal
-            onClick={() => {
-              setExpand((o) => !o);
-            }}
-          >
-            <ProjectExpandView {...props} />
-          </Modal>
-        </>
-      )}
+      <Modal
+        expand={expand}
+        onClick={() => {
+          setExpand((o) => !o);
+        }}
+      >
+        <ProjectExpandView {...props} />
+      </Modal>
     </>
   );
 }

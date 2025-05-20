@@ -6,6 +6,7 @@ export function ProjectTag(
 ) {
   return (
     <styled.div
+      userSelect={"none"}
       cursor={"pointer"}
       border={"1px solid black"}
       p={".5ch"}

@@ -5,8 +5,11 @@ import { PropsWithChildren } from "react";
 import { FaX } from "react-icons/fa6";
 
 export default function Modal(
-  props: PropsWithChildren & { onClick: () => void },
+  props: PropsWithChildren & { onClick: () => void; expand: boolean },
 ) {
+  if (!props.expand) {
+    return null;
+  }
   return (
     <>
       <Imposter

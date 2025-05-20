@@ -5,7 +5,12 @@ import { box, BoxProperties } from "@styled-system/patterns";
 
 export function Box({
   children,
+  onClick,
   ...p
-}: PropsWithChildren & BoxProperties & JsxStyleProps) {
-  return <styled.div className={box(p)} children={children} />;
+}: PropsWithChildren &
+  BoxProperties &
+  JsxStyleProps & { onClick?: () => void }) {
+  return (
+    <styled.div className={box(p)} children={children} onClick={onClick} />
+  );
 }
