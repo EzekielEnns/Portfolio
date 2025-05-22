@@ -1,5 +1,6 @@
 export enum Tags {
   "CkSoftware" = "CkSoftware",
+  "SaySo" = "SaySo",
   "Golang" = "Golang",
   "RealTime" = "RealTime",
   "React" = "React",

@@ -7,9 +7,12 @@ export default function CkMapGrouping(props: { af: Set<string> }) {
       af={props.af}
       tags={[Tags.React, Tags.CkSoftware, Tags.JavaScript, Tags.Typescript]}
       src=""
-      title="A Map of Doom"
+      title="Map Clustering"
     >
-      TODO
+      I nearly 10x performance by implementing my own dbScan Algorithm and
+      making use of tan virtual; The map would crash on travel agents if they
+      didn't have enough filters active, the solution: cluster hotels that are
+      close together and limit renders.
     </ProjectCard>
   );
 }

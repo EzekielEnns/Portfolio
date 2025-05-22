@@ -1,4 +1,4 @@
-import { Box, Cluster } from "@styled-system/jsx";
+import { Box, Cluster, styled } from "@styled-system/jsx";
 import Modal from "components/Modal";
 import { ProjectExpandView } from "components/ProjectExpandedView";
 import { ProjectMedia } from "components/ProjectMedia";
@@ -44,7 +44,7 @@ export default function ProjectCard(props: ProjectCardProps) {
           })}
         </Cluster>
         <Box border={"none"}>
-          <p>{props.children}</p>
+          <styled.p truncate>{props.children}</styled.p>
         </Box>
       </Box>
       <Modal

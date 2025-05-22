@@ -9,7 +9,7 @@ export const ProjectExpandView = (
 ) => {
   return (
     <Box bgColor={"white"} h={"90vh"}>
-      <Title hideLinks>Project Title</Title>
+      <Title hideLinks>{props.title}</Title>
       <Box border={"none"}>
         <Stack spacing={"0.5rem"}>
           <Box h={"50vh"}>

@@ -1,5 +1,6 @@
 import { styled } from "@styled-system/jsx";
 import Modal from "components/Modal";
+import { About } from "content";
 import { Box } from "layout/pandas/Box";
 import { useState } from "react";
 import { FiFileText } from "react-icons/fi";
@@ -53,7 +54,7 @@ export default function Headers() {
         </Box>
       </styled.div>
       <Modal expand={about} onClick={() => setAbout((o) => !o)}>
-        <Box>TODO About</Box>
+        <About />
       </Modal>
       <Modal expand={cv} onClick={() => setCv((o) => !o)}>
         <Box>TODO Cv</Box>
