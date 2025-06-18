@@ -35,7 +35,7 @@ export default function Landing(props: { onClick?: () => void }) {
           onClick={props.onClick}
         >
           {/*TODO change to something with a bit more pazzas*/}
-          ⇃Explore My Work⇂
+          scroll to see more
         </styled.button>
       </CoverFooter>
     </Cover>

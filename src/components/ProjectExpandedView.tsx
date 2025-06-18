@@ -8,26 +8,29 @@ export const ProjectExpandView = (
   props: ProjectCardProps & { onClick?: () => void },
 ) => {
   return (
-    <Box bgColor={"white"} h={"90vh"}>
+    <Box bgColor={"white"} h={"90vh"} overflow={"auto"}>
       <Title hideLinks>{props.title}</Title>
       <Box border={"none"}>
         <Stack spacing={"0.5rem"}>
-          <Box h={"50vh"}>
-            <ProjectMedia
-              h="100%"
-              w="100%"
-              src={props.src}
-              onClick={props.onClick}
-            />
-          </Box>
-          <Cluster mt={".5ch"} spacing={".5ch"}>
-            {props.tags.map((r, i) => (
-              <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
-            ))}
-            <ProjectTag>CkSoftware</ProjectTag>
-            <ProjectTag>React</ProjectTag>
-            <ProjectTag>TypeScript</ProjectTag>
-          </Cluster>
+          <Stack>
+            <Box w={"fit-content"} alignSelf={"center"}>
+              <ProjectMedia
+                h="50vh"
+                objPos={"center"}
+                objFit={"contain"}
+                src={props.src}
+                onClick={props.onClick}
+              />
+            </Box>
+            <Cluster mt={".5ch"} spacing={".5ch"}>
+              {props.tags.map((r, i) => (
+                <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
+              ))}
+              <ProjectTag>CkSoftware</ProjectTag>
+              <ProjectTag>React</ProjectTag>
+              <ProjectTag>TypeScript</ProjectTag>
+            </Cluster>
+          </Stack>
           <styled.p>{props.children}</styled.p>
         </Stack>
       </Box>

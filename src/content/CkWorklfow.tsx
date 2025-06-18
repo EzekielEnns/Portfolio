@@ -1,5 +1,6 @@
 import ProjectCard from "components/ProjectCard";
 import { Tags } from "content/tags";
+import asset from "./tracker.png";
 
 export default function CkWorklfow(props: { af: Set<string> }) {
   return (
@@ -12,15 +13,13 @@ export default function CkWorklfow(props: { af: Set<string> }) {
         Tags.RealTime,
         Tags.Typescript,
       ]}
-      src=""
-      title="Employee Tracker"
+      src={asset}
+      title="Sales Tracker Overhaul Weeks of Work Down to Days"
     >
-      The Sales team had a tracker that would show their progress, by reworking
-      the data flow I was able to decrease development time, 3 weeks to fix an
-      issue in this feature became 2 days (a 110% decrease in time). It worked
-      by using server side sync events, these moved data flow off the client and
-      entirely onto the server, letting me isolate bugs to be either data coming
-      in or data coming out
+      The sales team’s progress tracker was slow to update and a pain to fix. I
+      redesigned it to handle all the syncing on the server, instead of the
+      client. Now, updates that used to take weeks can be done in a couple of
+      days, making the team much more agile.
     </ProjectCard>
   );
 }

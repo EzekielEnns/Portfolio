@@ -1,5 +1,6 @@
 import ProjectCard from "components/ProjectCard";
 import { Tags } from "content/tags";
+import asset from "./WebRtc.png";
 
 export default function LearnWebRtc(props: { af: Set<string> }) {
   return (
@@ -12,13 +13,15 @@ export default function LearnWebRtc(props: { af: Set<string> }) {
         Tags.RealTime,
         Tags["Developer Tools"],
       ]}
-      src=""
-      title="Growing WebRtc"
+      src={asset}
+      title="Real-Time Peer-to-Peer Chat in the Browser"
     >
-      Notoriously complicated, WebRtc is a (kinda)low level network protocol on
-      our browsers, as a attempt to make the process of learning WebRtc easier i
-      made a simple repo displaying how easy it can be to make your own peer to
-      peer network.
+      I built a simple chat app where people can message each other directly,
+      right in their browsers—no downloads needed. The back end uses a tiny Go
+      server to connect people, but once that’s done, messages go straight from
+      one user to another. The site is made with plain JavaScript and a bit of
+      Tailwind CSS for color and style. This project was a fun experiment to see
+      just how easy real-time, private messaging can be.
     </ProjectCard>
   );
 }

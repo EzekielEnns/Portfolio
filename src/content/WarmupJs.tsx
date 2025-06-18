@@ -1,6 +1,6 @@
 import ProjectCard from "components/ProjectCard";
 import { Tags } from "content/tags";
-
+import asset from "./warmupjs.png";
 export default function WarmupJs(props: { af: Set<string> }) {
   return (
     <ProjectCard
@@ -12,14 +12,13 @@ export default function WarmupJs(props: { af: Set<string> }) {
         Tags.DevOps,
         Tags.SaySo,
       ]}
-      src=""
-      title="WarmupJs"
+      src={asset}
+      title="Warming Up Serverless Functions with WarmUp JS"
     >
-      Ever needed to cut cloud costs using a serverless db? Well good luck if
-      you don't use this, these ~10 lines of code. Serverless db's tend to have
-      to be running first in order for you to use them, this incurs cost, to get
-      around this i made this package to hit a warm up endpoint, differing your
-      db reliant code to after the warmup endpoint returns the clear
+      WarmUp JS is a tiny tool I made to get serverless services ready to go
+      before you need them. It wraps any async function, runs a quick warm-up
+      step, and manages timing with localStorage, so your apps feel faster when
+      users first log in.
     </ProjectCard>
   );
 }

@@ -1,17 +1,20 @@
 import ProjectCard from "components/ProjectCard";
 import { Tags } from "content/tags";
+import asset from "./wasmnobindgen.png";
 
 export default function WasmNoBindgen(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
       tags={[Tags.JavaScript, Tags.Rust]}
-      src=""
-      title="Browser Bare Metal"
+      src={asset}
+      title="Tiny Rust Game Engine in Your Browser"
     >
-      Ever wanted to manage pointers in your browser? Well look no further this
-      project was a nice experiment with using raw WASM for a small purpose game
-      engine.
+      This demo lets you play a simple text-based grid game—just move the “@”
+      symbol using your keyboard, right in the browser. It uses Rust compiled to
+      WebAssembly, with a TypeScript loader that fetches and connects
+      everything. It’s a neat example of bringing high-performance Rust code
+      into modern web pages.
     </ProjectCard>
   );
 }

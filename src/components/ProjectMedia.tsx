@@ -1,4 +1,4 @@
-import { Frame, styled } from "@styled-system/jsx";
+import { Frame, styled, FrameProps } from "@styled-system/jsx";
 import { Btn } from "components/Btn";
 import { IoMdExpand } from "react-icons/io";
 type Props = {
@@ -8,6 +8,10 @@ type Props = {
   mH?: string;
   w?: string;
   h?: string;
+  n?: number;
+  d?: number;
+  objPos?: FrameProps["objectPosition"];
+  objFit?: FrameProps["objectFit"];
 };
 export function ProjectMedia(props: Props) {
   return (
@@ -16,9 +20,10 @@ export function ProjectMedia(props: Props) {
       w={props.w}
       maxW={props.mW}
       maxH={props.mH}
-      denominator={9}
-      numerator={16}
-      objectPosition={"top"}
+      denominator={props.d ?? 3}
+      numerator={props.n ?? 2}
+      objectPosition={props.objPos ?? "center"}
+      objectFit={props.objFit}
       pos={"relative"}
     >
       <styled.img style={{ borderRadius: "12px" }} src={props.src} />
