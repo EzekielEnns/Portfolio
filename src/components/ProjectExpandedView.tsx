@@ -1,14 +1,15 @@
-import { Box, Stack, Cluster, styled } from "@styled-system/jsx";
+import { Box, Stack, Cluster, styled, Flex } from "@styled-system/jsx";
 import { ProjectCardProps } from "components/ProjectCard";
 import { ProjectMedia } from "components/ProjectMedia";
 import { ProjectTag } from "components/ProjectTag";
 import { Title } from "components/ProjectTitle";
+import { Links, LinksProps } from "./ProjectLinks";
 
 export const ProjectExpandView = (
-  props: ProjectCardProps & { onClick?: () => void },
+  props: LinksProps & ProjectCardProps & { onClick?: () => void },
 ) => {
   return (
-    <Box bgColor={"white"} h={"90vh"} overflow={"auto"}>
+    <Box bgColor={"white"} h={"90vh"} w={"100%"} overflow={"auto"}>
       <Title hideLinks>{props.title}</Title>
       <Box border={"none"}>
         <Stack spacing={"0.5rem"}>
@@ -26,9 +27,7 @@ export const ProjectExpandView = (
               {props.tags.map((r, i) => (
                 <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
               ))}
-              <ProjectTag>CkSoftware</ProjectTag>
-              <ProjectTag>React</ProjectTag>
-              <ProjectTag>TypeScript</ProjectTag>
+              <Links showX git={props.git} demo={props.demo} />
             </Cluster>
           </Stack>
           <styled.p>{props.children}</styled.p>

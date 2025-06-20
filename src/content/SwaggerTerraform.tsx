@@ -5,6 +5,7 @@ export default function SwaggerTerraform(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
+      git="https://github.com/EzekielEnns/Terraform-Rest-Aws"
       tags={[Tags.DevOps, Tags.SaySo]}
       src={asset}
       title="Deploying a Go REST API with Just Terraform"

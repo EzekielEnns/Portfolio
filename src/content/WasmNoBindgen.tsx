@@ -5,6 +5,8 @@ import asset from "./wasmnobindgen.png";
 export default function WasmNoBindgen(props: { af: Set<string> }) {
   return (
     <ProjectCard
+      git="https://github.com/EzekielEnns/example_wasm_no_bindgen"
+      demo="https://ezekielenns.github.io/example_wasm_no_bindgen/"
       af={props.af}
       tags={[Tags.JavaScript, Tags.Rust]}
       src={asset}

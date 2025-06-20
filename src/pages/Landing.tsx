@@ -25,8 +25,6 @@ export default function Landing(props: { onClick?: () => void }) {
       </CoverBody>
       <CoverFooter>
         <styled.button
-          cursor={"pointer"}
-          _hover={{ bgColor: "rgba(128,128,128,0.7)" }}
           w={"100%"}
           borderRadius={"xl"}
           transition={"background"}
@@ -34,8 +32,7 @@ export default function Landing(props: { onClick?: () => void }) {
           p={"4px"}
           onClick={props.onClick}
         >
-          {/*TODO change to something with a bit more pazzas*/}
-          scroll to see more
+          Scroll for the good stuff ;)
         </styled.button>
       </CoverFooter>
     </Cover>

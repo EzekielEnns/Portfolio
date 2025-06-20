@@ -5,6 +5,7 @@ export default function WarmupJs(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
+      git="https://github.com/EzekielEnns/warmupjs"
       tags={[
         Tags.JavaScript,
         Tags.Typescript,

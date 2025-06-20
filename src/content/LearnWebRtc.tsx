@@ -6,6 +6,10 @@ export default function LearnWebRtc(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
+      git={"https://github.com/EzekielEnns/example_webrtc"}
+      demo={
+        "https://github.com/EzekielEnns/example_webrtc/blob/main/webrtc.gif"
+      }
       tags={[
         Tags.SaySo,
         Tags.JavaScript,

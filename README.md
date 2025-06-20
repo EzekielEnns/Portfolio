@@ -1,9 +1,8 @@
 # My Portfolio 🙌
-- [ ] review tags
-- [ ] add project links/demos
-- [ ] fix project title overflow
-- [  ] fix buttons
-    - close button is weird
-    - make all tag buttons update the store state
+- [x] review tags
+- [x] add project links/demos
+- [x] fix project title overflow
+- [x] fix buttons
+- [ ] write resume
 - [ ] deploy
 

@@ -6,6 +6,7 @@ import { ProjectTag } from "components/ProjectTag";
 import { Title } from "components/ProjectTitle";
 import { Tags } from "content";
 import { ReactNode, useMemo, useState } from "react";
+import { LinksProps } from "./ProjectLinks";
 
 export type ProjectCardProps = {
   tags: Tags[];
@@ -13,7 +14,7 @@ export type ProjectCardProps = {
   children: ReactNode;
   src: string;
   title: string;
-};
+} & LinksProps;
 export default function ProjectCard(props: ProjectCardProps) {
   const [expand, setExpand] = useState(false);
   const render = useMemo(
@@ -26,7 +27,9 @@ export default function ProjectCard(props: ProjectCardProps) {
   return (
     <>
       <Box bgColor={"white"} scrollSnapAlign={"start"}>
-        <Title>{props.title}</Title>
+        <Title git={props.git} demo={props.demo}>
+          {props.title}
+        </Title>
         <ProjectMedia
           src={props.src}
           onClick={() => {
