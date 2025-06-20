@@ -9,14 +9,31 @@ export const ProjectExpandView = (
   props: LinksProps & ProjectCardProps & { onClick?: () => void },
 ) => {
   return (
-    <Box bgColor={"white"} h={"90vh"} w={"100%"} overflow={"auto"}>
+    <Box 
+      bgColor={"white"} 
+      h={"100%"} 
+      w={"100%"} 
+      overflow={"auto"}
+      p={{ base: "1rem", md: "1.5rem" }}
+    >
       <Title hideLinks>{props.title}</Title>
       <Box border={"none"}>
         <Stack spacing={"0.5rem"}>
           <Stack>
-            <Box w={"fit-content"} alignSelf={"center"}>
+            <Box 
+              w={"fit-content"} 
+              alignSelf={"center"}
+              css={{
+                "& > *": {
+                  height: "50vh",
+                  "@media (max-width: 768px)": {
+                    height: "30vh !important",
+                  }
+                }
+              }}
+            >
               <ProjectMedia
-                h="50vh"
+                mH="40vh"
                 objPos={"center"}
                 objFit={"contain"}
                 src={props.src}

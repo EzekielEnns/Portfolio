@@ -20,8 +20,19 @@ export default function Modal(
         backdropFilter={"blur(10px)"}
         pointerEvents={"none"}
       />
-      <Imposter zIndex={"1000"} test>
-        <styled.div pos={"relative"} w={"75vw"} maxW={"90vw"} h={"90vh"}>
+      <Imposter zIndex={"1000"}>
+        <styled.div
+          pos={"relative"}
+          w={{ base: "95vw", md: "75vw" }}
+          maxW={"95vw"}
+          h={{ base: "95dvh", md: "90vh" }}
+          css={{
+            "@supports (height: 100dvh)": {
+              height: "95dvh",
+            },
+            paddingBottom: "env(safe-area-inset-bottom)",
+          }}
+        >
           <Btn
             borderRadius={"16px"}
             pos={"absolute"}

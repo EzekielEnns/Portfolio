@@ -15,9 +15,9 @@ export const Title = (
       pos={"relative"}
       w={"100%"}
     >
-      <styled.text p={"4px"} textWrap={"wrap"}>
+      <styled.span p={"4px"} textWrap={"wrap"}>
         {props.children}
-      </styled.text>
+      </styled.span>
       {!props.hideLinks && <Links git={props.git} demo={props.demo} />}
     </styled.h1>
   );
