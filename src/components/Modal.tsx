@@ -39,11 +39,15 @@ export default function Modal(
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}
-            top={0}
-            right={0}
-            m={"0.5rem"}
-            w={"1.4rem"}
-            h={"1.4rem"}
+            top={"0.75rem"}
+            right={"0.75rem"}
+            w={{ base: "2.75rem", md: "2rem" }}
+            h={{ base: "2.75rem", md: "2rem" }}
+            zIndex={10}
+            _hover={{
+              transform: "none",
+              filter: "brightness(1.1)",
+            }}
             onClick={props.onClick}
           >
             <FaX />

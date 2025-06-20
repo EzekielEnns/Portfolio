@@ -11,17 +11,15 @@ export type LinksProps = {
 };
 export const Links = (props: LinksProps & HTMLStyledProps<"div">) => {
   return (
-    <Box
-      p={"0px"}
-      ml={"auto"}
-      border={"none"}
-      spaceY={"0.5em"}
-      spaceX={props.showX ? "0.5em" : undefined}
-    >
+    <Box display={"flex"} p={"0px"} ml={"auto"} border={"none"} gap={"0.5em"}>
       {props.git && (
         <Btn
           borderRadius={"full"}
-          p={"0.2ch"}
+          w={{ base: "2.75rem", md: "2rem" }}
+          h={{ base: "2.75rem", md: "2rem" }}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
           onClick={() => {
             window.open(props.git, "_blank");
           }}
@@ -32,7 +30,11 @@ export const Links = (props: LinksProps & HTMLStyledProps<"div">) => {
       {props.demo && (
         <Btn
           borderRadius={"full"}
-          p={"0.2ch"}
+          w={{ base: "2.75rem", md: "2rem" }}
+          h={{ base: "2.75rem", md: "2rem" }}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
           onClick={() => {
             window.open(props.demo, "_blank");
           }}

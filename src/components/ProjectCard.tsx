@@ -53,6 +53,7 @@ export default function ProjectCard(props: ProjectCardProps) {
       <Modal
         expand={expand}
         onClick={() => {
+          console.log("she gioung ");
           setExpand((o) => !o);
         }}
       >

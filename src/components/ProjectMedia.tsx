@@ -30,9 +30,8 @@ export function ProjectMedia(props: Props) {
       {props.onClick && (
         <Btn
           onClick={props.onClick}
-          w={"1.4rem"}
-          h={"1.4rem"}
-          p={"0.2ch"}
+          w={{ base: "2.75rem", md: "2rem" }}
+          h={{ base: "2.75rem", md: "2rem" }}
           position={"absolute"}
           bottom={0}
           right={0}

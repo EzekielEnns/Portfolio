@@ -15,7 +15,16 @@ export const Title = (
       pos={"relative"}
       w={"100%"}
     >
-      <styled.span p={"4px"} textWrap={"wrap"}>
+      <styled.span
+        p={"4px"}
+        w={"75%"}
+        display={"-webkit-box"}
+        lineClamp={2}
+        css={{
+          WebkitLineClamp: 2,
+          overflow: "hidden",
+        }}
+      >
         {props.children}
       </styled.span>
       {!props.hideLinks && <Links git={props.git} demo={props.demo} />}

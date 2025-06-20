@@ -9,10 +9,10 @@ export const ProjectExpandView = (
   props: LinksProps & ProjectCardProps & { onClick?: () => void },
 ) => {
   return (
-    <Box 
-      bgColor={"white"} 
-      h={"100%"} 
-      w={"100%"} 
+    <Box
+      bgColor={"white"}
+      h={"100%"}
+      w={"100%"}
       overflow={"auto"}
       p={{ base: "1rem", md: "1.5rem" }}
     >
@@ -20,16 +20,16 @@ export const ProjectExpandView = (
       <Box border={"none"}>
         <Stack spacing={"0.5rem"}>
           <Stack>
-            <Box 
-              w={"fit-content"} 
+            <Box
+              w={"fit-content"}
               alignSelf={"center"}
               css={{
                 "& > *": {
                   height: "50vh",
                   "@media (max-width: 768px)": {
                     height: "30vh !important",
-                  }
-                }
+                  },
+                },
               }}
             >
               <ProjectMedia
@@ -44,7 +44,7 @@ export const ProjectExpandView = (
               {props.tags.map((r, i) => (
                 <ProjectTag key={`${i}-${props.children}`}>{r}</ProjectTag>
               ))}
-              <Links showX git={props.git} demo={props.demo} />
+              <Links git={props.git} demo={props.demo} />
             </Cluster>
           </Stack>
           <styled.p>{props.children}</styled.p>

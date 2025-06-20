@@ -30,6 +30,7 @@ export default function Landing(props: { onClick?: () => void }) {
           transition={"background"}
           fontSize={"xl"}
           p={"4px"}
+          mb={"5em"}
           onClick={props.onClick}
         >
           Scroll for the good stuff ;)
