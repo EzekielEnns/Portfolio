@@ -1,5 +1,5 @@
 import ProjectCard from "components/ProjectCard";
-import asset from "./wasmnobindgen.png";
+import asset from "./assets/wasmnobindgen.png";
 
 export default function WasmNoBindgen(props: { af: Set<string> }) {
   return (
