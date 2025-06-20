@@ -1,10 +1,10 @@
 import { styled } from "@styled-system/jsx";
-import { type JsxStyleProps } from "@styled-system/types";
+import { type HTMLStyledProps } from "@styled-system/jsx";
 import { type PropsWithChildren } from "react";
 
 //something is weird with this button it does not follow the mouse right
 export const Btn = (
-  props: PropsWithChildren & JsxStyleProps & { onClick?: () => void },
+  props: PropsWithChildren & HTMLStyledProps<"button"> & { onClick?: () => void },
 ) => {
   return (
     <styled.button

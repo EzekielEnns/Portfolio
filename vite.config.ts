@@ -9,10 +9,10 @@ export default defineConfig({
   resolve: {
     alias: {
       "@styled-system": resolve(__dirname, "./styled-system"),
-      "@styled-system/types": resolve(
-        __dirname,
-        "./styled-system/types/index.d.ts",
-      ),
+      // "@styled-system/types": resolve(
+      //   __dirname,
+      //   "./styled-system/types/index.d.ts",
+      // ),
       //      "@styled-system/*": resolve(_dirname, "./styled-system/*"),
     },
   },

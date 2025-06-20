@@ -1,6 +1,6 @@
 import { type PropsWithChildren } from "react";
 import { styled } from "@styled-system/jsx";
-import { type JsxStyleProps } from "@styled-system/types";
+import { type HTMLStyledProps } from "@styled-system/jsx";
 import { box, type BoxProperties } from "@styled-system/patterns";
 
 export function Box({
@@ -9,7 +9,7 @@ export function Box({
   ...p
 }: PropsWithChildren &
   BoxProperties &
-  JsxStyleProps & { onClick?: () => void }) {
+  HTMLStyledProps<"div"> & { onClick?: () => void }) {
   return (
     <styled.div className={box(p)} children={children} onClick={onClick} />
   );
