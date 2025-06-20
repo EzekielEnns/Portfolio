@@ -8,7 +8,6 @@ import { GoPerson } from "react-icons/go";
 
 export default function Headers() {
   const [about, setAbout] = useState(false);
-  const [cv, setCv] = useState(false);
 
   return (
     <Box display={"flex"}>
@@ -41,7 +40,7 @@ export default function Headers() {
           alignItems={"center"}
           cursor={"pointer"}
           onClick={() => {
-            setCv((o) => !o);
+            window.open("/resume.pdf", "_blank");
           }}
           _hover={{
             textDecoration: "underline",
@@ -55,9 +54,6 @@ export default function Headers() {
       </styled.div>
       <Modal expand={about} onClick={() => setAbout((o) => !o)}>
         <About />
-      </Modal>
-      <Modal expand={cv} onClick={() => setCv((o) => !o)}>
-        <Box>TODO Cv</Box>
       </Modal>
     </Box>
   );

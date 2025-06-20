@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Document background -->
+  <rect x="14" y="10" width="36" height="44" rx="6" fill="#ffffff" stroke="#7F8C8D" stroke-width="2"/>
+  <!-- Folded corner -->
+  <polygon points="44,10 50,16 44,16" fill="#ECF0F1"/>
+  <!-- Face (smile + eyes) -->
+  <circle cx="26" cy="30" r="2" fill="#7F8C8D"/>
+  <circle cx="38" cy="30" r="2" fill="#7F8C8D"/>
+  <path d="M27 37 Q32 42 37 37" stroke="#7F8C8D" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>
