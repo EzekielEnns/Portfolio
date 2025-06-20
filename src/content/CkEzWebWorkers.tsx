@@ -1,16 +1,10 @@
 import ProjectCard from "components/ProjectCard";
-import { Tags } from "content/tags";
-import asset from "./workers.png";
+import asset from "./assets/workers.png";
 export default function CkEzWebWorkers(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
-      tags={[
-        Tags.CkSoftware,
-        Tags.JavaScript,
-        Tags.Typescript,
-        Tags["Developer Tools"],
-      ]}
+      tags={["CkSoftware", "JavaScript", "Typescript", "Developer Tools"]}
       src={asset}
       title=" Zero-Hassle Multi-Threading for the Web"
     >

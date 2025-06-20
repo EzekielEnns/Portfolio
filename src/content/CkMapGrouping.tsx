@@ -1,12 +1,11 @@
 import ProjectCard from "components/ProjectCard";
-import { Tags } from "content/tags";
-import asset from "./map.png";
+import asset from "./assets/map.png";
 
 export default function CkMapGrouping(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
-      tags={[Tags.React, Tags.CkSoftware, Tags.JavaScript, Tags.Typescript]}
+      tags={["React", "CkSoftware", "JavaScript", "Typescript"]}
       src={asset}
       title="10x Faster Maps for Travel Agents"
     >

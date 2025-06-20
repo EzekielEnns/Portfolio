@@ -1,7 +1,7 @@
 import { styled } from "@styled-system/jsx";
 import { Btn } from "components/Btn";
 import { Imposter } from "layout/pandas/Imposter";
-import { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import { FaX } from "react-icons/fa6";
 
 export default function Modal(

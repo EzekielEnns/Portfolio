@@ -1,9 +1,9 @@
-import { Box, Stack, Cluster, styled, Flex } from "@styled-system/jsx";
-import { ProjectCardProps } from "components/ProjectCard";
+import { Box, Stack, Cluster, styled } from "@styled-system/jsx";
+import { type ProjectCardProps } from "components/ProjectCard";
 import { ProjectMedia } from "components/ProjectMedia";
 import { ProjectTag } from "components/ProjectTag";
 import { Title } from "components/ProjectTitle";
-import { Links, LinksProps } from "./ProjectLinks";
+import { Links, type LinksProps } from "./ProjectLinks";
 
 export const ProjectExpandView = (
   props: LinksProps & ProjectCardProps & { onClick?: () => void },

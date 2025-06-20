@@ -1,6 +1,5 @@
 import ProjectCard from "components/ProjectCard";
-import { Tags } from "content/tags";
-import asset from "./WebRtc.png";
+import asset from "./assets/WebRtc.png";
 
 export default function LearnWebRtc(props: { af: Set<string> }) {
   return (
@@ -10,13 +9,7 @@ export default function LearnWebRtc(props: { af: Set<string> }) {
       demo={
         "https://github.com/EzekielEnns/example_webrtc/blob/main/webrtc.gif"
       }
-      tags={[
-        Tags.SaySo,
-        Tags.JavaScript,
-        Tags.Golang,
-        Tags.RealTime,
-        Tags["Developer Tools"],
-      ]}
+      tags={["SaySo", "JavaScript", "Golang", "RealTime", "Developer Tools"]}
       src={asset}
       title="Real-Time Peer-to-Peer Chat in the Browser"
     >

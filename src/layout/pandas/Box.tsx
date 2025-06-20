@@ -1,7 +1,7 @@
-import { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import { styled } from "../../../styled-system/jsx";
-import { JsxStyleProps } from "../../../styled-system/types";
-import { box, BoxProperties } from "@styled-system/patterns";
+import { type JsxStyleProps } from "../../../styled-system/types";
+import { box, type BoxProperties } from "@styled-system/patterns";
 
 export function Box({
   children,

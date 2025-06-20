@@ -1,12 +1,11 @@
 import ProjectCard from "components/ProjectCard";
-import { Tags } from "content/tags";
-import asset from "./terraform.png";
+import asset from "./assets/terraform.png";
 export default function SwaggerTerraform(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
       git="https://github.com/EzekielEnns/Terraform-Rest-Aws"
-      tags={[Tags.DevOps, Tags.SaySo]}
+      tags={["DevOps", "SaySo"]}
       src={asset}
       title="Deploying a Go REST API with Just Terraform"
     >

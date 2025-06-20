@@ -1,4 +1,4 @@
-import { Frame, styled, FrameProps } from "@styled-system/jsx";
+import { Frame, styled, type FrameProps } from "@styled-system/jsx";
 import { Btn } from "components/Btn";
 import { IoMdExpand } from "react-icons/io";
 type Props = {

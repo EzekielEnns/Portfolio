@@ -4,9 +4,9 @@ import { ProjectExpandView } from "components/ProjectExpandedView";
 import { ProjectMedia } from "components/ProjectMedia";
 import { ProjectTag } from "components/ProjectTag";
 import { Title } from "components/ProjectTitle";
-import { Tags } from "content";
-import { ReactNode, useMemo, useState } from "react";
-import { LinksProps } from "./ProjectLinks";
+import { type ReactNode, useMemo, useState } from "react";
+import { type LinksProps } from "./ProjectLinks";
+import type { Tags } from "content/tags";
 
 export type ProjectCardProps = {
   tags: Tags[];

@@ -1,6 +1,6 @@
-import { HTMLStyledProps, styled } from "@styled-system/jsx";
-import { StackProperties, stack } from "@styled-system/patterns";
-import { PropsWithChildren } from "react";
+import { type HTMLStyledProps, styled } from "@styled-system/jsx";
+import { type StackProperties, stack } from "@styled-system/patterns";
+import { type PropsWithChildren } from "react";
 
 export function Stack({
   children,

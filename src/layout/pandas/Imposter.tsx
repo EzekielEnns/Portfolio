@@ -1,7 +1,7 @@
 import { styled } from "@styled-system/jsx";
-import { imposter, ImposterVariant } from "@styled-system/recipes";
-import { JsxStyleProps } from "@styled-system/types";
-import { PropsWithChildren } from "react";
+import { imposter, type ImposterVariant } from "@styled-system/recipes";
+import { type JsxStyleProps } from "@styled-system/types";
+import { type PropsWithChildren } from "react";
 
 //TODO add an onClick
 export function Imposter({

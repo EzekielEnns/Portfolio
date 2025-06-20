@@ -1,6 +1,6 @@
 import { styled } from "@styled-system/jsx";
-import { Links, LinksProps } from "components/ProjectLinks";
-import { PropsWithChildren } from "react";
+import { Links, type LinksProps } from "components/ProjectLinks";
+import { type PropsWithChildren } from "react";
 
 export const Title = (
   props: LinksProps & PropsWithChildren & { hideLinks?: boolean },

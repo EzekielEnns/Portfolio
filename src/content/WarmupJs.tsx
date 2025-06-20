@@ -1,18 +1,11 @@
 import ProjectCard from "components/ProjectCard";
-import { Tags } from "content/tags";
-import asset from "./warmupjs.png";
+import asset from "./assets/warmupjs.png";
 export default function WarmupJs(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
       git="https://github.com/EzekielEnns/warmupjs"
-      tags={[
-        Tags.JavaScript,
-        Tags.Typescript,
-        Tags["Developer Tools"],
-        Tags.DevOps,
-        Tags.SaySo,
-      ]}
+      tags={["JavaScript", "Typescript", "DevOps", "SaySo", "Developer Tools"]}
       src={asset}
       title="Warming Up Serverless Functions with WarmUp JS"
     >

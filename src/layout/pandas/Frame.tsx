@@ -1,7 +1,7 @@
 import { styled } from "@styled-system/jsx";
-import { FrameProperties, frame } from "@styled-system/patterns";
-import { JsxStyleProps } from "@styled-system/types";
-import { PropsWithChildren } from "react";
+import { type FrameProperties, frame } from "@styled-system/patterns";
+import { type JsxStyleProps } from "@styled-system/types";
+import { type PropsWithChildren } from "react";
 
 export function Frame({
   children,

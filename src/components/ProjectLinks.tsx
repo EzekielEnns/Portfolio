@@ -1,5 +1,4 @@
-import { Cluster } from "@styled-system/jsx";
-import { HTMLStyledProps } from "@styled-system/types";
+import { type HTMLStyledProps } from "@styled-system/types";
 import { Btn } from "components/Btn";
 import { Box } from "layout/pandas/Box";
 import { FaGithubAlt } from "react-icons/fa6";

@@ -1,5 +1,5 @@
 import { ProjectExpandView } from "components/ProjectExpandedView";
-import asset from "./about.jpg";
+import asset from "./assets/about.jpg";
 export function About() {
   return (
     <ProjectExpandView af={new Set()} tags={[]} src={asset} title="About Me">

@@ -1,7 +1,7 @@
 import { styled } from "@styled-system/jsx";
 import { cover } from "@styled-system/recipes";
-import { HTMLStyledProps } from "@styled-system/types";
-import { PropsWithChildren } from "react";
+import { type HTMLStyledProps } from "@styled-system/types";
+import { type PropsWithChildren } from "react";
 
 export const Cover = ({
   children,

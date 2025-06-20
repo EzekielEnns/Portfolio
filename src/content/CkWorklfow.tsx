@@ -1,18 +1,11 @@
 import ProjectCard from "components/ProjectCard";
-import { Tags } from "content/tags";
-import asset from "./tracker.png";
+import asset from "./assets/tracker.png";
 
 export default function CkWorklfow(props: { af: Set<string> }) {
   return (
     <ProjectCard
       af={props.af}
-      tags={[
-        Tags.CSharp,
-        Tags.React,
-        Tags.CkSoftware,
-        Tags.RealTime,
-        Tags.Typescript,
-      ]}
+      tags={["CSharp", "React", "CkSoftware", "RealTime", "Typescript"]}
       src={asset}
       title="Sales Tracker Overhaul Weeks of Work Down to Days"
     >

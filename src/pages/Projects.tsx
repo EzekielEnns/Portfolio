@@ -1,12 +1,24 @@
 import Headers from "components/Headers";
 import { ProjectTag } from "components/ProjectTag";
-import { Cards, Tags } from "content";
+import { Cards, type Tags } from "content";
 import { Cluster } from "layout/pandas/cluster";
 import { Cover, CoverBody, CoverHeader } from "layout/pandas/Cover";
 import { Grid } from "layout/pandas/Grid";
 import { useState } from "react";
 
-const filters = Object.keys(Tags);
+const filters: Tags[] = [
+  "CkSoftware",
+  "SaySo",
+  "Golang",
+  "RealTime",
+  "React",
+  "JavaScript",
+  "Typescript",
+  "DevOps",
+  "Developer Tools",
+  "CSharp",
+  "Rust",
+];
 export default function Projects() {
   //TODO move to store
   const [af, setAF] = useState<Set<string>>(new Set());

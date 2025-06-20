@@ -1,6 +1,5 @@
 import ProjectCard from "components/ProjectCard";
-import { Tags } from "content/tags";
-import asset from "./glyphlib.png";
+import asset from "./assets/glyphlib.png";
 
 export default function UsefulGlyphlib(props: { af: Set<string> }) {
   return (
@@ -8,7 +7,7 @@ export default function UsefulGlyphlib(props: { af: Set<string> }) {
       git="https://github.com/EzekielEnns/glyphlib"
       af={props.af}
       demo="https://github.com/EzekielEnns/glyphlib/blob/main/glyph.gif"
-      tags={[Tags.JavaScript, Tags["Developer Tools"]]}
+      tags={["JavaScript", "Developer Tools"]}
       src={asset}
       title="WebGL Text Renderer for Classic Game UIs"
     >

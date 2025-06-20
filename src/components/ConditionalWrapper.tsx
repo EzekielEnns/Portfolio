@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode } from "react";
+import { type PropsWithChildren, type ReactNode } from "react";
 
 export interface ConditionalWrapperProps extends PropsWithChildren {
   wrapper?: (props: PropsWithChildren) => ReactNode;
