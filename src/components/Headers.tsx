@@ -35,7 +35,7 @@ export default function Headers() {
         />
         <CompactLink
           name="GitHub"
-          url="https://github.com/ezekiel-enns"
+          url="https://github.com/EzekielEnns"
           icon={<FaGithub fontSize={"1.2em"} />}
         />
         <CompactLink
